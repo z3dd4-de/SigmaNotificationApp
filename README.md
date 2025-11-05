@@ -32,4 +32,7 @@ https://gitlab.com/ciofeca/sdsdata
 
 ## License
 Because Alfonso used it, I publish my work also under the MIT License. Feel free to do what you want.
- 
+
+# Copyright
+Besides the license, this application is the original work of Dipl.-Biol. Björn Zedroßer, Cologne, Germany.
+(c) 2025
