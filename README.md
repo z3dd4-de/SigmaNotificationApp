@@ -6,6 +6,7 @@ A small app to check if a Sigma speedometer is available in its docking station 
 - Sigma Sport Docking Station TL2012
 - Sigma Sport speedometer(*)
 - BikeDB2025 to store the data (recommended, can be found on my Github account)
+
 (*) currently BC12.12, BC16.12 and BC16.12 STS are supported
 
 ## Features
