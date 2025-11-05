@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.6.1 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2025-11-05T14:37:07.985816700"/>
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { background: transparent; line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-weight: bold; font-size: 16pt }
+		h2.cjk { font-size: 16pt; font-family: "Microsoft YaHei"; font-weight: bold }
+		h2.ctl { font-family: "Arial"; font-size: 16pt; font-weight: bold }
+		td p { orphans: 0; widows: 0; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="de-DE" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="line-height: 100%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+<font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Hilfe</b></font></font></p>
+<h2 class="western">1. Voraussetzungen</h2>
+<ul>
+	<li><p>Sigma Docking Station TL2012</p></li>
+	<li><p>Sigma Sport Tacho xx.12*</p></li>
+	<li><p>Windows 10/11 64bit</p></li>
+	<li><p>Empfohlen: BikeDB 2025</p></li>
+</ul>
+<p>* Aktuell werden BC12.12, BC16.12 und BC16.12 STS unterstützt</p>
+<p>Es sollten alle Tachos der Topline 2009/2012-Reihe unterstützt
+werden. Wer einen anderen davon zum Laufen bekommt (sieht Github-Link
+in den Quellen), kann mir gerne die ID mitteilen, damit ich den
+allgemein verfügbar machen kann (siehe Bekannte Tacho-IDs).</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">2. Installation</h2>
+<p>ZIP-Installationspaket von Github herunterladen, an beliebigen Ort
+entpacken.</p>
+<p>„SigmaNotificationApp.exe“ starten, nach Bedarf Link anlegen.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">3. Verwendung</h2>
+<p>Die Anwendung starten wenn die Sigma Docking Station angeschlossen
+ist. Tacho mit Fahrdaten einlegen. Sobald die Meldung erscheint, dass
+ein Tacho erkannt wurde, können die Daten importiert werden.<br/>
+<img src="help_html_1acd0d04.gif" name="Bild1" align="left" width="165" height="46" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p>Entweder im Menü Tacho → Auslesen drücken oder auf das
+Fahrrad-Symbol klicken.</p>
+<p>Jetzt sollten alle Felder mit den verfügbaren Daten befüllt
+worden sein (abhängig vom verwendeten Tachotyp).</p>
+<p>Diese Daten können durch Klicken des „Speichern“-Button
+gesichert werden. 
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font color="#c9211e"><b>Die eigentliche Aufgabe dieser Anwendung
+ist nur das Auslesen der Tachodaten. </b></font>Um sie sinnvoll
+verwenden zu können, wird empfohlen, dass die <b>BikeDB 2025 </b>zur
+Verwaltung der Fahrraddaten benutzt wird. Dies ist eine mächtige
+Verwaltungssoftware für alles mögliche: verschiedene Fahrräder,
+Strecken, Fahrten, etc.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">4. Speicher-Format</h2>
+<p>In der Version 1.0 erzeugt die Anwendung nur eine JSON-Datei
+„bikedata.json“, die jedes Mal überschrieben wird. Die
+eigentliche Aufgabe dieser Anwendung ist nämlich die Verwendung
+innerhalb der <b>BikeDB 2025,</b> die ebenfalls auf meinem
+Github-Account kostenlos verfügbar ist (siehe Quellen). 
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p>Wer eine eigene Lösung programmieren will, findet hier die
+C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">class</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">RideData</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+TachoName { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+BikeName { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DateTime</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+Timestamp { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+DistanceMeters { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+TimeSeconds { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+MeanSpeedKmh { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+MaxSpeedKmh { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">byte</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+Cadence { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+TripSectionDistanceMeters { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+TripSectionTimeSeconds { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+DistanceKm =&gt; DistanceMeters / 1000.0;</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+Duration =&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+TripSectionDuration =&gt;
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TripSectionTimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<br/>
+
+</p>
+<h2 class="western">5. Userdaten</h2>
+<p>Die Anwendung speichert automatisch folgende Einstellungen:</p>
+<ul>
+	<li><p>Fensterposition und -größe</p></li>
+	<li><p>Status des Programms (Fenstermodus oder minimiert)</p></li>
+	<li><p>Zuletzt verwendeter Tacho (Name und Seriennummer)</p></li>
+	<li><p>Liste mit verfügbaren Fahrrädern</p></li>
+	<li><p>Sprache (Deutsch/Englisch)*</p></li>
+</ul>
+<p>* Hinweis: die BikeDB2025 ist bisher nur in Deutsch verfügbar</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">6. Quellen</h2>
+<table width="100%" cellpadding="0" cellspacing="0">
+	<col width="128*"/>
+	<col width="128*"/>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>RUST-Programm
+			von Alfonso Martone 
+			</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p>https://gitlab.com/ciofeca/sdsdata</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>Github-Link
+			für die Sigma Notification App</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>Github-Link
+			BikeDB 2025</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p>https://github.com/z3dd4-de/BikeDB2025</p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">7. Bekannte Tacho IDs</h2>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="128*"/>
+	<col width="128*"/>
+	<tr valign="top">
+		<td width="50%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 12.12</p>
+		</td>
+		<td width="50%" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			0x12</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 16.12</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			0x15</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 16.12 STS</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			0x16</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			tbd</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<p>Wer andere Tachos verwendet, muss diese in SigmaReader.cs
+hinzufügen:</p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">enum</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeComputerModel</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Unknown
+= 0,</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612
+= 0x15,</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1212
+= 0x12,</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612_STS
+= 0x16</font></font></font></p>
+<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
+</body>
+</html>
