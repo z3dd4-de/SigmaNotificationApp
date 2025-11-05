@@ -4,9 +4,9 @@ A small app to check if a Sigma speedometer is available in its docking station 
 ## Prerequisites
 - Windows 10/11 64bit
 - Sigma Sport Docking Station TL2012
-- Sigma Sport speedometer*
+- Sigma Sport speedometer(*)
 - BikeDB2025 to store the data (recommended, can be found on my Github account)
-* currently BC 12.12, BC16.12 and BC16.12 STS are supported
+(*) currently BC12.12, BC16.12 and BC16.12 STS are supported
 
 ## Features
 - Can be minimized and waits idle beneath the clock on a Windows system.
@@ -17,3 +17,16 @@ A small app to check if a Sigma speedometer is available in its docking station 
 ## Screenshots
 ![German main window of the application](app_german.png)
 ![English main window of the application](app_english.png)
+
+## Console app
+In the directory ConsoleApp you can also find the basic C#-code to access the cradle aka Docking Station. 
+This was used for debugging and learn the protocol of the speedometer. 
+It might be useful for anyone trying to program their own application.
+
+## Credits
+The original work was done by Alfonso Martone. Check out his original work at:
+https://gitlab.com/ciofeca/sdsdata
+
+## License
+Because Alfonso used it, I publish my work also under the MIT License. Feel free to do what you want.
+ 
