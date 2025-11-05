@@ -18,6 +18,7 @@ A small app to check if a Sigma speedometer is available in its docking station 
 ## Screenshots
 ![German main window of the application](app_german.png)
 ![English main window of the application](app_english.png)
+
 The DateTimePicker is dependent on the Operating System used. On my Windows 11 it will always show the German date. If you've got an English OS, that output may vary.
 
 ## Console app
