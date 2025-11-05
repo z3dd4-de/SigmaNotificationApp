@@ -52,6 +52,7 @@
             this.Name = "HelpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HelpForm";
+            this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -35,6 +35,17 @@ namespace SigmaNotificationApp
         private void addBikeButton_Click(object sender, EventArgs e)
         {
             bikeComboBox.Items.Add(addBikeTextBox.Text);
+            string tmp = String.Empty;
+            foreach (var item in bikeComboBox.Items)
+            {
+                if (item.ToString() == addBikeTextBox.Text)
+                {
+                    bikeComboBox.SelectedItem = item;
+                    //break;
+                }
+                tmp += item.ToString() + ";";
+            }
+            Properties.Settings.Default.BikeCollection = tmp;
             addBikeTextBox.Clear();
         }
 
@@ -52,6 +63,11 @@ namespace SigmaNotificationApp
                 addBikeButton.Enabled = true;
             else
                 addBikeButton.Enabled = false;
+        }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

@@ -30,21 +30,21 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tachoComboBox = new System.Windows.Forms.ComboBox();
-            this.bikeComboBox = new System.Windows.Forms.ComboBox();
             this.addTachoTextBox = new System.Windows.Forms.TextBox();
-            this.addBikeTextBox = new System.Windows.Forms.TextBox();
             this.clearTachoButton = new System.Windows.Forms.Button();
-            this.clearBikeBbutton = new System.Windows.Forms.Button();
             this.addTachoButton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.bikeComboBox = new System.Windows.Forms.ComboBox();
+            this.addBikeTextBox = new System.Windows.Forms.TextBox();
+            this.clearBikeBbutton = new System.Windows.Forms.Button();
             this.addBikeButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,17 +76,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tacho";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 91);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 82);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Fahrrad";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -104,6 +93,61 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 63);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tachoComboBox
+            // 
+            this.tachoComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tachoComboBox.FormattingEnabled = true;
+            this.tachoComboBox.Items.AddRange(new object[] {
+            "BC 12.12",
+            "BC 16.16",
+            "BC 16.16 STS"});
+            this.tachoComboBox.Location = new System.Drawing.Point(3, 3);
+            this.tachoComboBox.Name = "tachoComboBox";
+            this.tachoComboBox.Size = new System.Drawing.Size(198, 21);
+            this.tachoComboBox.TabIndex = 0;
+            // 
+            // addTachoTextBox
+            // 
+            this.addTachoTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addTachoTextBox.Location = new System.Drawing.Point(207, 3);
+            this.addTachoTextBox.Name = "addTachoTextBox";
+            this.addTachoTextBox.Size = new System.Drawing.Size(198, 20);
+            this.addTachoTextBox.TabIndex = 2;
+            this.addTachoTextBox.TextChanged += new System.EventHandler(this.addTachoTextBox_TextChanged);
+            // 
+            // clearTachoButton
+            // 
+            this.clearTachoButton.Enabled = false;
+            this.clearTachoButton.Location = new System.Drawing.Point(3, 34);
+            this.clearTachoButton.Name = "clearTachoButton";
+            this.clearTachoButton.Size = new System.Drawing.Size(75, 23);
+            this.clearTachoButton.TabIndex = 1;
+            this.clearTachoButton.Text = "Löschen";
+            this.clearTachoButton.UseVisualStyleBackColor = true;
+            this.clearTachoButton.Click += new System.EventHandler(this.clearTachoButton_Click);
+            // 
+            // addTachoButton
+            // 
+            this.addTachoButton.Enabled = false;
+            this.addTachoButton.Location = new System.Drawing.Point(207, 34);
+            this.addTachoButton.Name = "addTachoButton";
+            this.addTachoButton.Size = new System.Drawing.Size(75, 23);
+            this.addTachoButton.TabIndex = 3;
+            this.addTachoButton.Text = "Hinzufügen";
+            this.addTachoButton.UseVisualStyleBackColor = true;
+            this.addTachoButton.Click += new System.EventHandler(this.addTachoButton_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 91);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(414, 82);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fahrrad";
             // 
             // tableLayoutPanel3
             // 
@@ -123,19 +167,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(408, 63);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // tachoComboBox
-            // 
-            this.tachoComboBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tachoComboBox.FormattingEnabled = true;
-            this.tachoComboBox.Items.AddRange(new object[] {
-            "BC 12.12",
-            "BC 16.16",
-            "BC 16.16 STS"});
-            this.tachoComboBox.Location = new System.Drawing.Point(3, 3);
-            this.tachoComboBox.Name = "tachoComboBox";
-            this.tachoComboBox.Size = new System.Drawing.Size(198, 21);
-            this.tachoComboBox.TabIndex = 0;
-            // 
             // bikeComboBox
             // 
             this.bikeComboBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -145,15 +176,6 @@
             this.bikeComboBox.Size = new System.Drawing.Size(198, 21);
             this.bikeComboBox.TabIndex = 4;
             // 
-            // addTachoTextBox
-            // 
-            this.addTachoTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addTachoTextBox.Location = new System.Drawing.Point(207, 3);
-            this.addTachoTextBox.Name = "addTachoTextBox";
-            this.addTachoTextBox.Size = new System.Drawing.Size(198, 20);
-            this.addTachoTextBox.TabIndex = 2;
-            this.addTachoTextBox.TextChanged += new System.EventHandler(this.addTachoTextBox_TextChanged);
-            // 
             // addBikeTextBox
             // 
             this.addBikeTextBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -162,17 +184,6 @@
             this.addBikeTextBox.Size = new System.Drawing.Size(198, 20);
             this.addBikeTextBox.TabIndex = 6;
             this.addBikeTextBox.TextChanged += new System.EventHandler(this.addBikeTextBox_TextChanged);
-            // 
-            // clearTachoButton
-            // 
-            this.clearTachoButton.Enabled = false;
-            this.clearTachoButton.Location = new System.Drawing.Point(3, 34);
-            this.clearTachoButton.Name = "clearTachoButton";
-            this.clearTachoButton.Size = new System.Drawing.Size(75, 23);
-            this.clearTachoButton.TabIndex = 1;
-            this.clearTachoButton.Text = "Löschen";
-            this.clearTachoButton.UseVisualStyleBackColor = true;
-            this.clearTachoButton.Click += new System.EventHandler(this.clearTachoButton_Click);
             // 
             // clearBikeBbutton
             // 
@@ -184,18 +195,9 @@
             this.clearBikeBbutton.UseVisualStyleBackColor = true;
             this.clearBikeBbutton.Click += new System.EventHandler(this.clearBikeBbutton_Click);
             // 
-            // addTachoButton
-            // 
-            this.addTachoButton.Location = new System.Drawing.Point(207, 34);
-            this.addTachoButton.Name = "addTachoButton";
-            this.addTachoButton.Size = new System.Drawing.Size(75, 23);
-            this.addTachoButton.TabIndex = 3;
-            this.addTachoButton.Text = "Hinzufügen";
-            this.addTachoButton.UseVisualStyleBackColor = true;
-            this.addTachoButton.Click += new System.EventHandler(this.addTachoButton_Click);
-            // 
             // addBikeButton
             // 
+            this.addBikeButton.Enabled = false;
             this.addBikeButton.Location = new System.Drawing.Point(207, 34);
             this.addBikeButton.Name = "addBikeButton";
             this.addBikeButton.Size = new System.Drawing.Size(75, 23);
@@ -218,11 +220,12 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Einstellungen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);

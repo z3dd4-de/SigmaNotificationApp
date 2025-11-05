@@ -19,6 +19,7 @@ namespace SigmaNotificationApp
         private System.Windows.Forms.Timer monitorTimer;
         private BikeComputerInfo? lastDetectedComputer = null;
         private bool isReading = false; // Verhindert parallele Zugriffe
+        private string notConnectedText = "Nicht verbunden";
         private enum AppState
         {
             Normal,
@@ -31,7 +32,8 @@ namespace SigmaNotificationApp
             connectedToolStripStatusLabel.Visible = false;
             notConnectedToolStripStatusLabel.Visible = false;
             tachoToolStripStatusLabel.Visible = false;
-            tachoLabel.Text = "<nicht verbunden>";
+            tachoLabel.Text = notConnectedText;
+            LoadBikeList();
 
             // Event für Log-Meldungen
             reader.LogMessage += (s, msg) =>
@@ -45,9 +47,20 @@ namespace SigmaNotificationApp
 
             // Timer für Hintergrund-Monitoring
             monitorTimer = new System.Windows.Forms.Timer();
-            monitorTimer.Interval = 5000; // 5 Sekunden
+            monitorTimer.Interval = 10000; // 10 Sekunden
             monitorTimer.Tick += MonitorTimer_Tick;
             monitorTimer.Start();
+        }
+
+        private void LoadBikeList()
+        {
+            bikeComboBox.Items.Clear();
+            string bikeCollection = Properties.Settings.Default.BikeCollection;
+            if (!string.IsNullOrEmpty(bikeCollection))
+            {
+                var bikes = bikeCollection.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                bikeComboBox.Items.AddRange(bikes);
+            }
         }
 
         private void MonitorTimer_Tick(object sender, EventArgs e)
@@ -208,7 +221,8 @@ namespace SigmaNotificationApp
         private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            settingsForm.ShowDialog(this);
+            if (settingsForm.ShowDialog(this) == DialogResult.OK)
+                LoadBikeList();
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -318,6 +332,7 @@ namespace SigmaNotificationApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetLanguage(Properties.Settings.Default.Language);
             if (Properties.Settings.Default.WindowSize != Size.Empty) { 
                 Location = Properties.Settings.Default.WindowLocation;
                 Size = Properties.Settings.Default.WindowSize;
@@ -337,12 +352,88 @@ namespace SigmaNotificationApp
 
         private void deutschToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Language = "de";
+            Properties.Settings.Default.Save();
+            SetLanguage("de");
+        }
 
+        private void SetLanguage(string lang)
+        {
+            if (lang == "de")
+            {
+                label11.Text = "Datum";
+                label1.Text = "Tacho";
+                label3.Text = "Fahrrad";
+                label4.Text = "Gefahrende [km]";
+                label5.Text = "Fahrzeit [h:mm:ss]";
+                label6.Text = "Ø Geschwindigkeit [km/h]";
+                label7.Text = "Max. Geschwindigkeit [km/h]";
+                label8.Text = "Kadenz [U/min]";
+                label9.Text = "Teilstrecke Distanz [km]";
+                label10.Text = "Teilstrecke Zeit [h:mm:ss]";
+
+                dateiToolStripMenuItem.Text = "&Datei";
+                beendenToolStripMenuItem.Text = "Be&enden";
+                beendenToolStripMenuItem1.Text = "Be&enden";
+                tachoToolStripMenuItem.Text = "&Tacho";
+                auslesenToolStripMenuItem.Text = "&Auslesen";
+                einstellungenToolStripMenuItem.Text = "&Einstellungen";
+                hilfeToolStripMenuItem.Text = "&Hilfe";
+                infoToolStripMenuItem.Text = "&Info";
+                hilfeToolStripMenuItem1.Text = "&Hilfe";
+                spracheToolStripMenuItem.Text = "&Sprache";
+                optionenToolStripMenuItem.Text = "&Optionen";
+                deutschToolStripMenuItem.Text = "&Deutsch";
+                englishToolStripMenuItem.Text = "&English";
+                hauptfensterToolStripMenuItem.Text = "&Hauptfenster";
+                connectedToolStripStatusLabel.Text = "Verbunden";
+                notConnectedToolStripStatusLabel.Text = "Nicht verbunden";
+                notConnectedText = "Nicht verbunden";
+
+                saveButton.Text = "Speichern";
+                clearButton.Text = "Löschen";
+            }
+            else if (lang == "en")
+            {
+                label11.Text = "Date";
+                label1.Text = "Speedometer";
+                label3.Text = "Bike";
+                label4.Text = "Distance [km]";
+                label5.Text = "Time [h:mm:ss]";
+                label6.Text = "Ø speed [km/h]";
+                label7.Text = "Max. speed [km/h]";
+                label8.Text = "Cadence [U/min]";
+                label9.Text = "Leg distance [km]";
+                label10.Text = "Leg time [h:mm:ss]";
+
+                dateiToolStripMenuItem.Text = "&File";
+                beendenToolStripMenuItem.Text = "&Exit";
+                beendenToolStripMenuItem1.Text = "&Exit";
+                tachoToolStripMenuItem.Text = "Speedo&meter";
+                auslesenToolStripMenuItem.Text = "&Read";
+                einstellungenToolStripMenuItem.Text = "&Setup";
+                hilfeToolStripMenuItem.Text = "&Help";
+                infoToolStripMenuItem.Text = "&Info";
+                hilfeToolStripMenuItem1.Text = "&Help";
+                spracheToolStripMenuItem.Text = "&Language";
+                optionenToolStripMenuItem.Text = "&Options";
+                deutschToolStripMenuItem.Text = "&Deutsch";
+                englishToolStripMenuItem.Text = "&English";
+                hauptfensterToolStripMenuItem.Text = "&Main window";
+                connectedToolStripStatusLabel.Text = "Connected";
+                notConnectedToolStripStatusLabel.Text = "Not connected";
+                notConnectedText = "Not connected";
+
+                saveButton.Text = "Save";
+                clearButton.Text = "Delete";
+            }
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.Language = "en";
+            Properties.Settings.Default.Save();
+            SetLanguage("en");
         }
     }
 }

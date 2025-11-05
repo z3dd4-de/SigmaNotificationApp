@@ -50,6 +50,9 @@
             this.auslesenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spracheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -78,9 +81,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.spracheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notificationContextMenuStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -261,6 +261,31 @@
             this.einstellungenToolStripMenuItem.Text = "&Einstellungen";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
+            // spracheToolStripMenuItem
+            // 
+            this.spracheToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deutschToolStripMenuItem,
+            this.englishToolStripMenuItem});
+            this.spracheToolStripMenuItem.Name = "spracheToolStripMenuItem";
+            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.spracheToolStripMenuItem.Text = "&Sprache";
+            // 
+            // deutschToolStripMenuItem
+            // 
+            this.deutschToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deutschToolStripMenuItem.Image")));
+            this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
+            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.deutschToolStripMenuItem.Text = "&Deutsch";
+            this.deutschToolStripMenuItem.Click += new System.EventHandler(this.deutschToolStripMenuItem_Click);
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("englishToolStripMenuItem.Image")));
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.englishToolStripMenuItem.Text = "&English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
             // hilfeToolStripMenuItem
             // 
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -343,9 +368,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 278);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
+            this.label10.Size = new System.Drawing.Size(127, 13);
             this.label10.TabIndex = 16;
-            this.label10.Text = "TS Zeit [h:mm:ss]";
+            this.label10.Text = "Teilstrecke Zeit [h:mm:ss]";
             // 
             // tsTimeTextBox
             // 
@@ -369,9 +394,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 248);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.Size = new System.Drawing.Size(120, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "TS Strecke [km]";
+            this.label9.Text = "Teilstrecke Distanz [km]";
             // 
             // cadenceTextBox
             // 
@@ -387,9 +412,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 218);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 13);
+            this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Trittfrequenz";
+            this.label8.Text = "Kadenz [U/min]";
             // 
             // vmaxTextBox
             // 
@@ -403,11 +428,11 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 182);
+            this.label7.Location = new System.Drawing.Point(3, 188);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 26);
+            this.label7.Size = new System.Drawing.Size(145, 13);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Höchstgeschwindigkeit [km/h]";
+            this.label7.Text = "Max. Geschwindigkeit [km/h]";
             // 
             // vavgTextBox
             // 
@@ -421,11 +446,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 152);
+            this.label6.Location = new System.Drawing.Point(3, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 26);
+            this.label6.Size = new System.Drawing.Size(130, 13);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Durchschnittsgeschwindigkeit [km/h]";
+            this.label6.Text = "Ø Geschwindigkeit [km/h]";
             // 
             // label5
             // 
@@ -551,31 +576,6 @@
             this.clearButton.Text = "Löschen";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
-            // 
-            // spracheToolStripMenuItem
-            // 
-            this.spracheToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deutschToolStripMenuItem,
-            this.englishToolStripMenuItem});
-            this.spracheToolStripMenuItem.Name = "spracheToolStripMenuItem";
-            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.spracheToolStripMenuItem.Text = "&Sprache";
-            // 
-            // deutschToolStripMenuItem
-            // 
-            this.deutschToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deutschToolStripMenuItem.Image")));
-            this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
-            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deutschToolStripMenuItem.Text = "&Deutsch";
-            this.deutschToolStripMenuItem.Click += new System.EventHandler(this.deutschToolStripMenuItem_Click);
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("englishToolStripMenuItem.Image")));
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.englishToolStripMenuItem.Text = "&English";
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // MainForm
             // 

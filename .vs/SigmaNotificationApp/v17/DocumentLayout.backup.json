@@ -3,31 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|SigmaNotificationApp||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\sigmareader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:sigmareader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|c:\\users\\fukc-\\source\\repos\\sigmanotificationapp\\helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\tachodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:tachodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|c:\\users\\fukc-\\source\\repos\\sigmanotificationapp\\yourproject.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:yourproject.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -36,6 +13,37 @@
     {
       "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|SigmaNotificationApp||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\sigmareader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:sigmareader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|c:\\users\\fukc-\\source\\repos\\sigmanotificationapp\\helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|c:\\users\\fukc-\\source\\repos\\sigmanotificationapp\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\tachodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:tachodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\yourproject.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:yourproject.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\aboutbox1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -53,7 +61,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,81 +69,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HelpForm.cs [Entwurf]",
+              "DocumentIndex": 5,
+              "Title": "HelpForm.cs",
               "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs",
               "RelativeDocumentMoniker": "HelpForm.cs",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs [Entwurf]",
-              "RelativeToolTip": "HelpForm.cs [Entwurf]",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs",
+              "RelativeToolTip": "HelpForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBUAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T11:37:03.036Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-11-05T15:29:06.183Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "YourProject.csproj",
-              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\YourProject.csproj",
-              "RelativeDocumentMoniker": "YourProject.csproj",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\YourProject.csproj",
-              "RelativeToolTip": "YourProject.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T00:23:29.641Z",
+              "DocumentIndex": 8,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\MainForm.Designer.cs",
+              "RelativeToolTip": "MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T14:49:20.372Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SigmaReader.cs",
-              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SigmaReader.cs",
-              "RelativeDocumentMoniker": "SigmaReader.cs",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SigmaReader.cs",
-              "RelativeToolTip": "SigmaReader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T19:39:29.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SettingsForm.cs",
-              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
-              "RelativeDocumentMoniker": "SettingsForm.cs",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
-              "RelativeToolTip": "SettingsForm.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T18:30:01.658Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SettingsForm.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
-              "RelativeDocumentMoniker": "SettingsForm.cs",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs [Entwurf]",
-              "RelativeToolTip": "SettingsForm.cs [Entwurf]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T17:20:42.366Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TachoData.cs",
-              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\TachoData.cs",
-              "RelativeDocumentMoniker": "TachoData.cs",
-              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\TachoData.cs",
-              "RelativeToolTip": "TachoData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T16:41:56.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "SigmaNotificationApp",
               "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SigmaNotificationApp.csproj",
               "RelativeDocumentMoniker": "SigmaNotificationApp.csproj",
@@ -147,7 +107,81 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HelpForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs",
+              "RelativeDocumentMoniker": "HelpForm.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs [Entwurf]",
+              "RelativeToolTip": "HelpForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T11:37:03.036Z",
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "YourProject.csproj",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\YourProject.csproj",
+              "RelativeDocumentMoniker": "YourProject.csproj",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\YourProject.csproj",
+              "RelativeToolTip": "YourProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-05T00:23:29.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SigmaReader.cs",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SigmaReader.cs",
+              "RelativeDocumentMoniker": "SigmaReader.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SigmaReader.cs",
+              "RelativeToolTip": "SigmaReader.cs",
+              "ViewState": "AgIAAH8BAAAAAAAAAAAkwAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T19:39:29.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SettingsForm.cs",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
+              "RelativeDocumentMoniker": "SettingsForm.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
+              "RelativeToolTip": "SettingsForm.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwEUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T18:30:01.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SettingsForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs",
+              "RelativeDocumentMoniker": "SettingsForm.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\SettingsForm.cs [Entwurf]",
+              "RelativeToolTip": "SettingsForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T17:20:42.366Z",
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "TachoData.cs",
+              "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\TachoData.cs",
+              "RelativeDocumentMoniker": "TachoData.cs",
+              "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\TachoData.cs",
+              "RelativeToolTip": "TachoData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:41:56.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "AboutBox1.cs [Entwurf]",
               "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\AboutBox1.cs",
               "RelativeDocumentMoniker": "AboutBox1.cs",
@@ -158,20 +192,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAAAiwD8BAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAANMAAAAAAAAAAAAUwOAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-04T16:20:30.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Entwurf]",
               "DocumentMoniker": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",

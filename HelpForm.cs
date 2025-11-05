@@ -16,5 +16,10 @@ namespace SigmaNotificationApp
         {
             InitializeComponent();
         }
+
+        private void HelpForm_Load(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(System.Environment.CurrentDirectory + "\\help.html");
+        }
     }
 }

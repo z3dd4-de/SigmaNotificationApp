@@ -23,3 +23,4 @@ C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.pdb
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help.html
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.HelpForm.resources
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help_html_1acd0d04.gif
