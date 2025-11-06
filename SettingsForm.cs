@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SigmaNotificationApp
@@ -19,17 +12,33 @@ namespace SigmaNotificationApp
 
         private void clearTachoButton_Click(object sender, EventArgs e)
         {
-
+            // Not implemented yet
         }
 
         private void addTachoButton_Click(object sender, EventArgs e)
         {
-
+            if (addTachoTextBox.Text != String.Empty)
+            {
+                tachoComboBox.Items.Add(addTachoTextBox.Text);
+                string tmp = String.Empty;
+                foreach (var item in tachoComboBox.Items)
+                {
+                    if (item.ToString() == addTachoTextBox.Text)
+                    {
+                        tachoComboBox.SelectedItem = item;
+                        //break;
+                    }
+                    tmp += item.ToString() + ";";
+                }
+                Properties.Settings.Default.TachoCollection = tmp;
+                addTachoTextBox.Clear();
+            }
         }
 
         private void clearBikeBbutton_Click(object sender, EventArgs e)
         {
-
+            bikeComboBox.Items.Clear();
+            Properties.Settings.Default.BikeCollection = String.Empty;
         }
 
         private void addBikeButton_Click(object sender, EventArgs e)

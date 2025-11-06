@@ -9,6 +9,12 @@ A small app to check if a Sigma speedometer is available in its docking station 
 
 (*) currently BC12.12, BC16.12 and BC16.12 STS are supported
 
+## Installation
+Directory: \bin\Release\v1.0.0.0 (initial release)
+Just copy the directory and run the exe from any location that you want.
+Or: use setup.exe to create an entry in the start menu and allow Windows to uninstall the app.
+Directory \publish\setup.exe -> install the latest version
+
 ## Features
 - Can be minimized and waits idle beneath the clock on a Windows system.
 - Languages: German and English

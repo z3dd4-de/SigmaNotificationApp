@@ -24,3 +24,8 @@ C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help.html
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.HelpForm.resources
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help_html_1acd0d04.gif
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.exe.manifest
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.application
+C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.TrustInfo.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.exe.manifest
+C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.application
