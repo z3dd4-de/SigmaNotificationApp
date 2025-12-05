@@ -29,3 +29,4 @@ C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.TrustInfo.xml
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.exe.manifest
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.application
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help_en.html

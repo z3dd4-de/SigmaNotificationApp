@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="892368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="892880">
       <assemblyIdentity name="SigmaNotificationApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>88hBO+6Mm9lwhFNVZGzVt2B/1s0nDNXJIHGP9spX6DY=</dsig:DigestValue>
+        <dsig:DigestValue>SM8wmstb5jgv1OMrkW3H8ECuq9YSoDFWd3JOQl/1G/U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -190,6 +190,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>82Xx83//tWrAZMXOr9PVteGZnsmzXKgbSewLM+9NMVY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="help_en.html" size="22260">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9sB2W5920MbQ6MXmiPdCaFlxmzAwmjax8W1Hz1K51SA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="help_html_1acd0d04.gif" size="2617">
