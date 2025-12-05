@@ -171,7 +171,7 @@
             this.exitToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitToolStripButton.Name = "exitToolStripButton";
             this.exitToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.exitToolStripButton.Text = "toolStripButton1";
+            this.exitToolStripButton.Text = "Beenden";
             this.exitToolStripButton.Click += new System.EventHandler(this.exitToolStripButton_Click);
             // 
             // readTachoToolStripButton
@@ -181,7 +181,7 @@
             this.readTachoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.readTachoToolStripButton.Name = "readTachoToolStripButton";
             this.readTachoToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.readTachoToolStripButton.Text = "toolStripButton1";
+            this.readTachoToolStripButton.Text = "Auslesen";
             this.readTachoToolStripButton.Click += new System.EventHandler(this.readTachoToolStripButton_Click);
             // 
             // toolStripSeparator1
@@ -196,7 +196,7 @@
             this.infoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.infoToolStripButton.Name = "infoToolStripButton";
             this.infoToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.infoToolStripButton.Text = "toolStripButton1";
+            this.infoToolStripButton.Text = "Info";
             this.infoToolStripButton.Click += new System.EventHandler(this.infoToolStripButton_Click);
             // 
             // mainMenuStrip

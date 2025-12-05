@@ -15,6 +15,17 @@ namespace SigmaNotificationApp
         private BikeComputerInfo? lastDetectedComputer = null;
         private bool isReading = false; // Verhindert parallele Zugriffe
         private string notConnectedText = "Nicht verbunden";
+        private string tachoFoundText = "Tacho gefunden";
+        private string tachoConnectedText = "Tacho verbunden";
+        private string recognizedTachoText = "erkannt";
+        private string msgWaitPlease = "Bitte warten, Zugriff läuft bereits...";
+        private string msgDataRead = "Daten erfolgreich ausgelesen!";
+        private string errorText = "Fehler";
+        private string successText = "Erfolg";
+        private string errorReadingTachoText = "Fehler beim Auslesen der Daten.\nBitte Tacho überprüfen.";
+        private string tachoText = "Tacho";
+        private string unknownText = "Unbekannt";
+
         private enum AppState
         {
             Normal,
@@ -70,7 +81,7 @@ namespace SigmaNotificationApp
                 // NUR prüfen ob Tacho da ist - NICHT die Daten lesen!
                 if (reader.IsBikeComputerPresent())
                 {
-                    tachoLabel.Text = "Tacho verbunden";
+                    tachoLabel.Text = tachoConnectedText;
                     connectedToolStripStatusLabel.Visible = true;
                     notConnectedToolStripStatusLabel.Visible = false;
 
@@ -82,15 +93,15 @@ namespace SigmaNotificationApp
                         if (info != null)
                         {
                             lastDetectedComputer = info;
-                            dsNotifyIcon.ShowBalloonTip(3000, "Tacho gefunden",
-                                $"{info.ModelName} erkannt", ToolTipIcon.Info);
-                            tachoLabel.Text = $"Tacho: {info.ModelName}";
+                            dsNotifyIcon.ShowBalloonTip(3000, tachoFoundText,
+                                $"{info.ModelName} {recognizedTachoText}", ToolTipIcon.Info);
+                            tachoLabel.Text = $"{tachoText}: {info.ModelName}";
                         }
                     }
                 }
                 else
                 {
-                    tachoLabel.Text = "<nicht verbunden>";
+                    tachoLabel.Text = notConnectedText;
                     connectedToolStripStatusLabel.Visible = false;
                     notConnectedToolStripStatusLabel.Visible = true;
                     lastDetectedComputer = null; // Reset für nächstes Mal
@@ -130,7 +141,7 @@ namespace SigmaNotificationApp
         {
             if (isReading)
             {
-                MessageBox.Show("Bitte warten, Zugriff läuft bereits...", "Info",
+                MessageBox.Show(msgWaitPlease, "Info",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -157,18 +168,18 @@ namespace SigmaNotificationApp
                     // Fahrrad vorauswählen basierend auf Seriennummer
                     SelectBikeBySerial(info.SerialNumber);
 
-                    MessageBox.Show("Daten erfolgreich ausgelesen!", "Erfolg",
+                    MessageBox.Show(msgDataRead, successText,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Fehler beim Auslesen der Daten.\nBitte Tacho überprüfen.",
-                        "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(errorReadingTachoText,
+                        errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Fehler: {ex.Message}", "Fehler",
+                MessageBox.Show($"{errorText}: {ex.Message}", errorText,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -265,7 +276,8 @@ namespace SigmaNotificationApp
 
             string fileName = "bikedata.json";
             string jsonString = JsonSerializer.Serialize(rideData);
-            File.WriteAllText(fileName, jsonString);
+            string fullpath = Path.Combine(Properties.Settings.Default.SaveFolder, fileName);
+            File.WriteAllText(fullpath, jsonString);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -384,9 +396,20 @@ namespace SigmaNotificationApp
                 connectedToolStripStatusLabel.Text = "Verbunden";
                 notConnectedToolStripStatusLabel.Text = "Nicht verbunden";
                 notConnectedText = "Nicht verbunden";
-
+                tachoFoundText = "Tacho gefunden";
+                tachoConnectedText = "Tacho verbunden";
+                recognizedTachoText = "erkannt";
+                msgWaitPlease = "Bitte warten, Zugriff läuft bereits...";
+                msgDataRead = "Daten erfolgreich ausgelesen!";
+                errorText = "Fehler";
+                successText = "Erfolg";
+                errorReadingTachoText = "Fehler beim Auslesen der Daten.\nBitte Tacho überprüfen.";
+                tachoText = "Tacho";
+                unknownText = "Unbekannt";
                 saveButton.Text = "Speichern";
                 clearButton.Text = "Löschen";
+                readTachoToolStripButton.Text = "Auslesen";
+                exitToolStripButton.Text = "Beenden";
             }
             else if (lang == "en")
             {
@@ -406,7 +429,7 @@ namespace SigmaNotificationApp
                 beendenToolStripMenuItem1.Text = "&Exit";
                 tachoToolStripMenuItem.Text = "Speedo&meter";
                 auslesenToolStripMenuItem.Text = "&Read";
-                einstellungenToolStripMenuItem.Text = "&Setup";
+                einstellungenToolStripMenuItem.Text = "&Settings";
                 hilfeToolStripMenuItem.Text = "&Help";
                 infoToolStripMenuItem.Text = "&Info";
                 hilfeToolStripMenuItem1.Text = "&Help";
@@ -418,9 +441,20 @@ namespace SigmaNotificationApp
                 connectedToolStripStatusLabel.Text = "Connected";
                 notConnectedToolStripStatusLabel.Text = "Not connected";
                 notConnectedText = "Not connected";
-
+                tachoFoundText = "Speedometer found";
+                tachoConnectedText = "Speedometer connected";
+                recognizedTachoText = "recognized";
+                msgWaitPlease = "Please wait, already accessing...";
+                msgDataRead = "Data successfully read!";
+                errorText = "Error";
+                successText = "Success";
+                errorReadingTachoText = "Error reading data.\nPlease check speedometer.";
+                tachoText = "Speedometer";
+                unknownText = "Unknown";
                 saveButton.Text = "Save";
                 clearButton.Text = "Delete";
+                readTachoToolStripButton.Text = "Read";
+                exitToolStripButton.Text = "Exit";
             }
         }
 
