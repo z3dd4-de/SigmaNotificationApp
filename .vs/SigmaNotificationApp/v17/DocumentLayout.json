@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:helpform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|c:\\users\\fukc-\\source\\repos\\sigmanotificationapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC0DB4ED-4C0A-49CB-8EE1-8CF8B324C1D3}|SigmaNotificationApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -45,12 +45,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -65,6 +61,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainForm.cs",
@@ -74,8 +74,7 @@
               "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAAJsBAAAAAAAAAAAQwL8BAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:05:26.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T00:05:26.22Z"
             },
             {
               "$type": "Document",
@@ -132,8 +131,7 @@
               "ToolTip": "C:\\Users\\fukc-\\source\\repos\\SigmaNotificationApp\\HelpForm.cs [Entwurf]",
               "RelativeToolTip": "HelpForm.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T17:18:26.569Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-11-06T17:18:26.569Z"
             },
             {
               "$type": "Document",
