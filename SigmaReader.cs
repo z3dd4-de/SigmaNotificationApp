@@ -24,7 +24,10 @@ namespace SigmaDockingLib
         public byte Cadence { get; set; }
         public uint TripSectionDistanceMeters { get; set; }
         public uint TripSectionTimeSeconds { get; set; }
+        public double MinAltitudeMeters { get; set; } = 0;   // ← neu
+        public double MaxAltitudeMeters { get; set; } = 0;   // ← neu
 
+        // Computed properties – werden nicht in JSON serialisiert
         public double DistanceKm => DistanceMeters / 1000.0;
         public TimeSpan Duration => TimeSpan.FromSeconds(TimeSeconds);
         public TimeSpan TripSectionDuration => TimeSpan.FromSeconds(TripSectionTimeSeconds);

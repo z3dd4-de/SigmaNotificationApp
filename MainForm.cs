@@ -271,10 +271,12 @@ namespace SigmaNotificationApp
                 Cadence = (byte)(byte.TryParse(cadenceTextBox.Text, out byte cad) ? cad : 0),
                 Timestamp = dateTimePicker.Value,
                 TripSectionDistanceMeters = (uint)(double.TryParse(tsDistanceTextBox.Text, out double tsDist) ? tsDist * 1000 : 0),
-                TripSectionTimeSeconds = (uint)(TimeSpan.TryParse(tsTimeTextBox.Text, out TimeSpan tsDur) ? tsDur.TotalSeconds : 0)
+                TripSectionTimeSeconds = (uint)(TimeSpan.TryParse(tsTimeTextBox.Text, out TimeSpan tsDur) ? tsDur.TotalSeconds : 0),
+                MinAltitudeMeters = double.TryParse(minHeightTextBox.Text, out double minh) ? minh : 0, 
+                MaxAltitudeMeters = double.TryParse(maxHeightTextBox.Text, out double maxh) ? maxh : 0
             };
 
-            string fileName = "bikedata.json";
+            string fileName = "bikedata_" + dateTimePicker.Value.ToString("yyyyMMdd-HHmm") + ".json";
             string jsonString = JsonSerializer.Serialize(rideData);
             string fullpath = Path.Combine(Properties.Settings.Default.SaveFolder, fileName);
             File.WriteAllText(fullpath, jsonString);
@@ -378,6 +380,8 @@ namespace SigmaNotificationApp
                 label8.Text = "Kadenz [U/min]";
                 label9.Text = "Teilstrecke Distanz [km]";
                 label10.Text = "Teilstrecke Zeit [h:mm:ss]";
+                label12.Text = "Min Höhenmeter [m ü.NN]";
+                label13.Text = "Max Höhenmeter [m ü.NN]";
 
                 dateiToolStripMenuItem.Text = "&Datei";
                 beendenToolStripMenuItem.Text = "Be&enden";
@@ -423,6 +427,8 @@ namespace SigmaNotificationApp
                 label8.Text = "Cadence [U/min]";
                 label9.Text = "Leg distance [km]";
                 label10.Text = "Leg time [h:mm:ss]";
+                label12.Text = "Min height [m aSL]";
+                label13.Text = "Max height [m aSL]";
 
                 dateiToolStripMenuItem.Text = "&File";
                 beendenToolStripMenuItem.Text = "&Exit";

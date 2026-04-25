@@ -25,7 +25,7 @@ namespace SigmaNotificationApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("389, 459")]
+        [global::System.Configuration.DefaultSettingValueAttribute("389, 527")]
         public global::System.Drawing.Size WindowSize {
             get {
                 return ((global::System.Drawing.Size)(this["WindowSize"]));

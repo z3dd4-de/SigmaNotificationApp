@@ -3,32 +3,31 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title></title>
-	<meta name="generator" content="LibreOffice 25.2.6.1 (Windows)"/>
+	<meta name="generator" content="LibreOffice 25.8.5.2 (Windows)"/>
 	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="2025-11-05T14:53:35.256414400"/>
+	<meta name="changed" content="2026-04-25T18:00:34.591083600"/>
+	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<style type="text/css">
-		@page { size: 21cm 29.7cm; margin: 2cm }
-		p { background: transparent; line-height: 115%; margin-bottom: 0.25cm; background: transparent }
-		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
-		h2.western { font-family: "Liberation Sans", sans-serif; font-weight: bold; font-size: 16pt }
-		h2.cjk { font-size: 16pt; font-family: "Microsoft YaHei"; font-weight: bold }
-		h2.ctl { font-family: "Arial"; font-size: 16pt; font-weight: bold }
-		td p { orphans: 0; widows: 0; background: transparent }
-		a:link { color: #000080; text-decoration: underline }
-		a:visited { color: #800000; text-decoration: underline }
+		@page { margin: 2cm }
+		td p { background: transparent; line-height: 115%; margin-bottom: 0.25cm; orphans: 0; widows: 0 }
+		p { background: transparent; line-height: 115%; margin-bottom: 0.25cm }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt }
+		h2.cjk { font-size: 16pt; font-family: "Microsoft YaHei" }
+		h2.ctl { font-family: "Arial"; font-size: 16pt }
 	</style>
 </head>
-<body lang="de-DE" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="line-height: 100%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+<body lang="de-DE" dir="ltr"><p align="center" style="line-height: 100%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
 <font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Hilfe</b></font></font></p>
 <h2 class="western">1. Voraussetzungen</h2>
 <ul>
 	<li><p>Sigma Docking Station TL2012</p></li>
 	<li><p>Sigma Sport Tacho xx.12*</p></li>
 	<li><p>Windows 10/11 64bit</p></li>
-	<li><p>Empfohlen: BikeDB 2025</p></li>
+	<li><p>Empfohlen: BikeDB 2026</p></li>
 </ul>
 <p>* Aktuell werden BC12.12, BC16.12 und BC16.12 STS unterstützt</p>
 <p>Es sollten alle Tachos der Topline 2009/2012-Reihe unterstützt
@@ -73,10 +72,10 @@ gesichert werden.
 </p>
 <p><font color="#c9211e"><b>Die eigentliche Aufgabe dieser Anwendung
 ist nur das Auslesen der Tachodaten. </b></font>Um sie sinnvoll
-verwenden zu können, wird empfohlen, dass die <b>BikeDB 2025 </b>zur
-Verwaltung der Fahrraddaten benutzt wird. Dies ist eine mächtige
-Verwaltungssoftware für alles mögliche: verschiedene Fahrräder,
-Strecken, Fahrten, etc.</p>
+verwenden zu können, wird empfohlen, dass die <b>BikeDB 202</b><b>6</b><b>
+</b>zur Verwaltung der Fahrraddaten benutzt wird. Dies ist eine
+mächtige Verwaltungssoftware für alles mögliche: verschiedene
+Fahrräder, Strecken, Fahrten, etc.</p>
 <p><br/>
 <br/>
 
@@ -85,8 +84,9 @@ Strecken, Fahrten, etc.</p>
 <p>In der Version 1.0 erzeugt die Anwendung nur eine JSON-Datei
 „bikedata.json“, die jedes Mal überschrieben wird. Die
 eigentliche Aufgabe dieser Anwendung ist nämlich die Verwendung
-innerhalb der <b>BikeDB 2025,</b> die ebenfalls auf meinem
-Github-Account kostenlos verfügbar ist (siehe Quellen). 
+innerhalb der <b>BikeDB 202</b><b>6</b><span style="font-weight: normal">,</span>
+die ebenfalls auf meinem Github-Account kostenlos verfügbar ist
+(siehe Quellen). 
 </p>
 <p><br/>
 <br/>
@@ -94,92 +94,120 @@ Github-Account kostenlos verfügbar ist (siehe Quellen).
 </p>
 <p>Wer eine eigene Lösung programmieren will, findet hier die
 C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">class</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">RideData</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">class</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">RideData</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-TachoName { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TachoName
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-BikeName { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeName
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DateTime</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-Timestamp { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DateTime</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Timestamp
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-DistanceMeters { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DistanceMeters
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-TimeSeconds { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSeconds
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MeanSpeedKmh
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxSpeedKmh
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">byte</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Cadence
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionDistanceMeters
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionTimeSeconds
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-MeanSpeedKmh { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MinAltitudeMeters</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}
+= 0;</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-MaxSpeedKmh { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxAltitudeMeters</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">byte</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-Cadence { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-TripSectionDistanceMeters { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-TripSectionTimeSeconds { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}
+= 0;</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <br/>
 
 </p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-DistanceKm =&gt; DistanceMeters / 1000.0;</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-Duration =&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TimeSeconds);</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-TripSectionDuration =&gt;
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TripSectionTimeSeconds);</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DistanceKm
+=&gt; DistanceMeters / 1000.0;</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Duration
+=&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionDuration
+=&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TripSectionTimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <br/>
 
 </p>
@@ -273,25 +301,25 @@ TripSectionDuration =&gt;
 </p>
 <p>Wer andere Tachos verwendet, muss diese in SigmaReader.cs
 hinzufügen:</p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">enum</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeComputerModel</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">enum</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeComputerModel</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Unknown
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Unknown
 = 0,</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612
 = 0x15,</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1212
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1212
 = 0x12,</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
-<font color="#000000">    <font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612_STS
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612_STS
 = 0x16</font></font></font></p>
-<p style="line-height: 100%; background: transparent; margin-bottom: 0cm">
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
 </body>
 </html>

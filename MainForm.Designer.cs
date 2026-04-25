@@ -58,29 +58,33 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tsTimeTextBox = new System.Windows.Forms.TextBox();
-            this.tsDistanceTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cadenceTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.vmaxTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.vavgTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.timeTextBox = new System.Windows.Forms.TextBox();
-            this.distanceTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.bikeComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tachoLabel = new System.Windows.Forms.Label();
+            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
+            this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tsTimeTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tsDistanceTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cadenceTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.vmaxTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.vavgTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.timeTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.distanceTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bikeComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tachoLabel = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.notificationContextMenuStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -125,7 +129,7 @@
             this.connectedToolStripStatusLabel,
             this.notConnectedToolStripStatusLabel,
             this.tachoToolStripStatusLabel});
-            this.mainStatusStrip.Location = new System.Drawing.Point(0, 394);
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 462);
             this.mainStatusStrip.Name = "mainStatusStrip";
             this.mainStatusStrip.Size = new System.Drawing.Size(369, 22);
             this.mainStatusStrip.TabIndex = 0;
@@ -322,31 +326,37 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.tsTimeTextBox, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.tsDistanceTextBox, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.cadenceTextBox, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.vmaxTextBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.vavgTextBox, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.timeTextBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.distanceTextBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.bikeComboBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tachoLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tachoLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bikeComboBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.distanceTextBox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.timeTextBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.vavgTextBox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.vmaxTextBox, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.cadenceTextBox, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tsDistanceTextBox, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tsTimeTextBox, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.minHeightTextBox, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.maxHeightTextBox, 1, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowCount = 14;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -359,8 +369,75 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 345);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 413);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // maxHeightTextBox
+            // 
+            this.maxHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.maxHeightTextBox.Location = new System.Drawing.Point(158, 335);
+            this.maxHeightTextBox.Name = "maxHeightTextBox";
+            this.maxHeightTextBox.Size = new System.Drawing.Size(200, 20);
+            this.maxHeightTextBox.TabIndex = 26;
+            // 
+            // minHeightTextBox
+            // 
+            this.minHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.minHeightTextBox.Location = new System.Drawing.Point(158, 305);
+            this.minHeightTextBox.Name = "minHeightTextBox";
+            this.minHeightTextBox.Size = new System.Drawing.Size(200, 20);
+            this.minHeightTextBox.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Datum";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker.CustomFormat = "dd.MM.yyyy HH:mm";
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker.Location = new System.Drawing.Point(158, 5);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.saveButton);
+            this.flowLayoutPanel1.Controls.Add(this.clearButton);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(158, 363);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(208, 29);
+            this.flowLayoutPanel1.TabIndex = 20;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.saveButton.Location = new System.Drawing.Point(3, 3);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 9;
+            this.saveButton.Text = "Speichern";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearButton.Location = new System.Drawing.Point(84, 3);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 10;
+            this.clearButton.Text = "Löschen";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // label10
             // 
@@ -380,14 +457,6 @@
             this.tsTimeTextBox.Size = new System.Drawing.Size(200, 20);
             this.tsTimeTextBox.TabIndex = 8;
             // 
-            // tsDistanceTextBox
-            // 
-            this.tsDistanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tsDistanceTextBox.Location = new System.Drawing.Point(158, 245);
-            this.tsDistanceTextBox.Name = "tsDistanceTextBox";
-            this.tsDistanceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.tsDistanceTextBox.TabIndex = 7;
-            // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -398,13 +467,13 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Teilstrecke Distanz [km]";
             // 
-            // cadenceTextBox
+            // tsDistanceTextBox
             // 
-            this.cadenceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cadenceTextBox.Location = new System.Drawing.Point(158, 215);
-            this.cadenceTextBox.Name = "cadenceTextBox";
-            this.cadenceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.cadenceTextBox.TabIndex = 6;
+            this.tsDistanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tsDistanceTextBox.Location = new System.Drawing.Point(158, 245);
+            this.tsDistanceTextBox.Name = "tsDistanceTextBox";
+            this.tsDistanceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tsDistanceTextBox.TabIndex = 7;
             // 
             // label8
             // 
@@ -416,13 +485,13 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Kadenz [U/min]";
             // 
-            // vmaxTextBox
+            // cadenceTextBox
             // 
-            this.vmaxTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.vmaxTextBox.Location = new System.Drawing.Point(158, 185);
-            this.vmaxTextBox.Name = "vmaxTextBox";
-            this.vmaxTextBox.Size = new System.Drawing.Size(200, 20);
-            this.vmaxTextBox.TabIndex = 5;
+            this.cadenceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cadenceTextBox.Location = new System.Drawing.Point(158, 215);
+            this.cadenceTextBox.Name = "cadenceTextBox";
+            this.cadenceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.cadenceTextBox.TabIndex = 6;
             // 
             // label7
             // 
@@ -434,13 +503,13 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Max. Geschwindigkeit [km/h]";
             // 
-            // vavgTextBox
+            // vmaxTextBox
             // 
-            this.vavgTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.vavgTextBox.Location = new System.Drawing.Point(158, 155);
-            this.vavgTextBox.Name = "vavgTextBox";
-            this.vavgTextBox.Size = new System.Drawing.Size(200, 20);
-            this.vavgTextBox.TabIndex = 4;
+            this.vmaxTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.vmaxTextBox.Location = new System.Drawing.Point(158, 185);
+            this.vmaxTextBox.Name = "vmaxTextBox";
+            this.vmaxTextBox.Size = new System.Drawing.Size(200, 20);
+            this.vmaxTextBox.TabIndex = 5;
             // 
             // label6
             // 
@@ -452,6 +521,14 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Ø Geschwindigkeit [km/h]";
             // 
+            // vavgTextBox
+            // 
+            this.vavgTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.vavgTextBox.Location = new System.Drawing.Point(158, 155);
+            this.vavgTextBox.Name = "vavgTextBox";
+            this.vavgTextBox.Size = new System.Drawing.Size(200, 20);
+            this.vavgTextBox.TabIndex = 4;
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -462,6 +539,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Fahrzeit [h:mm:ss]";
             // 
+            // timeTextBox
+            // 
+            this.timeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.timeTextBox.Location = new System.Drawing.Point(158, 125);
+            this.timeTextBox.Name = "timeTextBox";
+            this.timeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.timeTextBox.TabIndex = 3;
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -471,14 +556,6 @@
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Gefahrende [km]";
-            // 
-            // timeTextBox
-            // 
-            this.timeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.timeTextBox.Location = new System.Drawing.Point(158, 125);
-            this.timeTextBox.Name = "timeTextBox";
-            this.timeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.timeTextBox.TabIndex = 3;
             // 
             // distanceTextBox
             // 
@@ -527,61 +604,31 @@
             this.tachoLabel.TabIndex = 1;
             this.tachoLabel.Text = "label2";
             // 
-            // label11
+            // label12
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 8);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Datum";
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 308);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(130, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Min Höhenmeter [m ü.NN]";
             // 
-            // dateTimePicker
+            // label13
             // 
-            this.dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker.Location = new System.Drawing.Point(158, 5);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.saveButton);
-            this.flowLayoutPanel1.Controls.Add(this.clearButton);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(158, 303);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(208, 29);
-            this.flowLayoutPanel1.TabIndex = 20;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.saveButton.Location = new System.Drawing.Point(3, 3);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 9;
-            this.saveButton.Text = "Speichern";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // clearButton
-            // 
-            this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.clearButton.Location = new System.Drawing.Point(84, 3);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 10;
-            this.clearButton.Text = "Löschen";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 338);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 13);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Max Höhenmeter [m ü.NN]";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 416);
+            this.ClientSize = new System.Drawing.Size(369, 484);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.mainStatusStrip);
@@ -590,6 +637,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sigma Sport Docking Station Reader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -662,6 +710,10 @@
         private System.Windows.Forms.ToolStripMenuItem spracheToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox maxHeightTextBox;
+        private System.Windows.Forms.TextBox minHeightTextBox;
     }
 }
 
