@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SigmaNotificationApp.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="de-DE" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SigmaNotificationApp.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="de-DE" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Elegantthemes-Beautiful-Flat-One-Color-Bike.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="892880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="894416">
       <assemblyIdentity name="SigmaNotificationApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SM8wmstb5jgv1OMrkW3H8ECuq9YSoDFWd3JOQl/1G/U=</dsig:DigestValue>
+        <dsig:DigestValue>5gT7ysSRptb63BPErBFQo6kKDZDM7JZhVK3C947/5Os=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -183,13 +183,13 @@
       <dsig:DigestValue>q/9+N5AoS4U4iqXTRRXY5UFLxKCt9Dv8eZBEYQSXD0Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="help.html" size="23911">
+  <file name="help.html" size="25481">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>82Xx83//tWrAZMXOr9PVteGZnsmzXKgbSewLM+9NMVY=</dsig:DigestValue>
+      <dsig:DigestValue>Uq8L9aRHkzGUF36Uj3LXR5ai6nrbuWTKKSFxFU6Z92U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="help_en.html" size="22260">
@@ -216,7 +216,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7C78Upt5O+1yBKCkC+oz9Brx+ux1nt0+INTJjQxrE6s=</dsig:DigestValue>
+      <dsig:DigestValue>+fieqoCb+NqG2Mexa0otFth9PPInAxyQXh2mpXlxP4M=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
