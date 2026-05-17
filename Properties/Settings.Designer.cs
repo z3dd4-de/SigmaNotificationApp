@@ -130,5 +130,17 @@ namespace SigmaNotificationApp.Properties {
                 this["SaveFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AssignmentJson {
+            get {
+                return ((string)(this["AssignmentJson"]));
+            }
+            set {
+                this["AssignmentJson"] = value;
+            }
+        }
     }
 }

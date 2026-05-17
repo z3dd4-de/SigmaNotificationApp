@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="894416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SigmaNotificationApp.exe" size="978384">
       <assemblyIdentity name="SigmaNotificationApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5gT7ysSRptb63BPErBFQo6kKDZDM7JZhVK3C947/5Os=</dsig:DigestValue>
+        <dsig:DigestValue>tPoh5piYq+JDKtKFyMOR4yc96H0YJgbRYRCrn5RNb/Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -183,22 +183,22 @@
       <dsig:DigestValue>q/9+N5AoS4U4iqXTRRXY5UFLxKCt9Dv8eZBEYQSXD0Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="help.html" size="25481">
+  <file name="help.html" size="25614">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Uq8L9aRHkzGUF36Uj3LXR5ai6nrbuWTKKSFxFU6Z92U=</dsig:DigestValue>
+      <dsig:DigestValue>WG39aYqy9X56/FsKya3SUV3UEOD6BCh09I59t+iICSQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="help_en.html" size="22260">
+  <file name="help_en.html" size="25351">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9sB2W5920MbQ6MXmiPdCaFlxmzAwmjax8W1Hz1K51SA=</dsig:DigestValue>
+      <dsig:DigestValue>gpkDHTMq2zx98Bt/slgPGUHlpIjFxUhAWVvBmGYnft0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="help_html_1acd0d04.gif" size="2617">
@@ -210,13 +210,13 @@
       <dsig:DigestValue>NdOjbkYw0KEaF5uVnM/5cBGTc5W5o6b+aUv5Qp/LVcs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SigmaNotificationApp.exe.config" size="2059">
+  <file name="SigmaNotificationApp.exe.config" size="2156">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+fieqoCb+NqG2Mexa0otFth9PPInAxyQXh2mpXlxP4M=</dsig:DigestValue>
+      <dsig:DigestValue>+63vd6j5g4kIIoY2iWwFxwGbZBXuIOxhTYhe12tftnU=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

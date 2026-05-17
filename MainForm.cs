@@ -14,6 +14,7 @@ namespace SigmaNotificationApp
         private System.Windows.Forms.Timer monitorTimer;
         private BikeComputerInfo? lastDetectedComputer = null;
         private bool isReading = false; // Verhindert parallele Zugriffe
+
         private string notConnectedText = "Nicht verbunden";
         private string tachoFoundText = "Tacho gefunden";
         private string tachoConnectedText = "Tacho verbunden";
@@ -25,6 +26,10 @@ namespace SigmaNotificationApp
         private string errorReadingTachoText = "Fehler beim Auslesen der Daten.\nBitte Tacho überprüfen.";
         private string tachoText = "Tacho";
         private string unknownText = "Unbekannt";
+        private string fileSavedText = "Datei erfolgreich gespeichert: ";
+        private string fileSaveErrorText = "Fehler beim Speichern der Datei.";
+        
+        AssignmentDictionary assignmentDictionary = new AssignmentDictionary();
 
         private enum AppState
         {
@@ -40,6 +45,7 @@ namespace SigmaNotificationApp
             tachoToolStripStatusLabel.Visible = false;
             tachoLabel.Text = notConnectedText;
             LoadBikeList();
+            assignmentDictionary.LoadSettings();
 
             // Event für Log-Meldungen
             reader.LogMessage += (s, msg) =>
@@ -159,6 +165,18 @@ namespace SigmaNotificationApp
                 {
                     lastDetectedComputer = info;
 
+                    string bike = assignmentDictionary.GetBikeForTacho(info.SerialNumber.ToString());
+                    //Console.WriteLine($"Serial: {info.SerialNumber}, Assigned bike: {bike}");
+                    foreach (var item in bikeComboBox.Items)
+                    {
+                        if (item.ToString() == bike)
+                        {
+                            bikeComboBox.SelectedItem = item;
+                            //Console.WriteLine($"Bike '{item}' selected for serial {info.SerialNumber}");
+                            break;
+                        }
+                    }
+
                     distanceTextBox.Text = data.DistanceKm.ToString("F2");
                     timeTextBox.Text = data.Duration.ToString(@"h\:mm\:ss");
                     vavgTextBox.Text = data.MeanSpeedKmh.ToString("F2");
@@ -166,7 +184,7 @@ namespace SigmaNotificationApp
                     cadenceTextBox.Text = data.Cadence.ToString();
 
                     // Fahrrad vorauswählen basierend auf Seriennummer
-                    SelectBikeBySerial(info.SerialNumber);
+                    //SelectBikeBySerial(info.SerialNumber);
 
                     MessageBox.Show(msgDataRead, successText,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -213,13 +231,12 @@ namespace SigmaNotificationApp
         // Beim Speichern der JSON-Datei das Mapping speichern
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // ... dein JSON-Speicher-Code ...
-
             // Mapping Seriennummer -> Fahrrad speichern
             if (lastDetectedComputer != null && !string.IsNullOrEmpty(bikeComboBox.Text))
             {
-                string settingKey = $"Bike_{lastDetectedComputer.SerialNumber}";
-                Properties.Settings.Default[settingKey] = bikeComboBox.Text;
+                //string settingKey = $"Bike_{lastDetectedComputer.SerialNumber}";
+                assignmentDictionary.AddAssignment(lastDetectedComputer.SerialNumber.ToString(), bikeComboBox.Text);
+                //Properties.Settings.Default[settingKey] = bikeComboBox.Text;
                 Properties.Settings.Default.Save();
             }
         }
@@ -262,7 +279,7 @@ namespace SigmaNotificationApp
 
             RideData rideData = new RideData
             {
-                TachoName = lastDetectedComputer?.ModelName ?? "Unbekannt",
+                TachoName = lastDetectedComputer?.ModelName ?? unknownText,
                 BikeName = bikeComboBox.Text,   
                 DistanceMeters = distanceMeters,
                 TimeSeconds = timeSeconds,
@@ -280,6 +297,14 @@ namespace SigmaNotificationApp
             string jsonString = JsonSerializer.Serialize(rideData);
             string fullpath = Path.Combine(Properties.Settings.Default.SaveFolder, fileName);
             File.WriteAllText(fullpath, jsonString);
+            if (File.Exists(fullpath))
+            {
+                MessageBox.Show(fileSavedText + fullpath, successText, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(fileSaveErrorText, errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -414,6 +439,9 @@ namespace SigmaNotificationApp
                 clearButton.Text = "Löschen";
                 readTachoToolStripButton.Text = "Auslesen";
                 exitToolStripButton.Text = "Beenden";
+                fileSavedText = "Datei erfolgreich gespeichert: ";
+                fileSaveErrorText = "Fehler beim Speichern der Datei.";
+                tachoMitRadVerknüpfenToolStripMenuItem.Text = "Tacho mit Rad verknüpfen";
             }
             else if (lang == "en")
             {
@@ -461,6 +489,9 @@ namespace SigmaNotificationApp
                 clearButton.Text = "Delete";
                 readTachoToolStripButton.Text = "Read";
                 exitToolStripButton.Text = "Exit";
+                fileSavedText = "File successfully saved: ";
+                fileSaveErrorText = "Error saving file.";
+                tachoMitRadVerknüpfenToolStripMenuItem.Text = "Assign speedometer";
             }
         }
 
@@ -469,6 +500,12 @@ namespace SigmaNotificationApp
             Properties.Settings.Default.Language = "en";
             Properties.Settings.Default.Save();
             SetLanguage("en");
+        }
+
+        private void tachoMitRadVerknüpfenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BikeInfoForm bikeInfoForm = new BikeInfoForm();
+            bikeInfoForm.ShowDialog(this);
         }
     }
 }

@@ -58,33 +58,34 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
-            this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tachoLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bikeComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.distanceTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.timeTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.vavgTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.vmaxTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cadenceTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tsDistanceTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tsTimeTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.minHeightTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tsTimeTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tsDistanceTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cadenceTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.vmaxTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.vavgTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.timeTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.distanceTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.bikeComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tachoLabel = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
+            this.tachoMitRadVerknüpfenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notificationContextMenuStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -185,7 +186,7 @@
             this.readTachoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.readTachoToolStripButton.Name = "readTachoToolStripButton";
             this.readTachoToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.readTachoToolStripButton.Text = "Auslesen";
+            this.readTachoToolStripButton.Text = "Tacho auslesen";
             this.readTachoToolStripButton.Click += new System.EventHandler(this.readTachoToolStripButton_Click);
             // 
             // toolStripSeparator1
@@ -252,7 +253,8 @@
             // optionenToolStripMenuItem
             // 
             this.optionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.einstellungenToolStripMenuItem});
+            this.einstellungenToolStripMenuItem,
+            this.tachoMitRadVerknüpfenToolStripMenuItem});
             this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
             this.optionenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.optionenToolStripMenuItem.Text = "&Optionen";
@@ -372,22 +374,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 413);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // maxHeightTextBox
-            // 
-            this.maxHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maxHeightTextBox.Location = new System.Drawing.Point(158, 335);
-            this.maxHeightTextBox.Name = "maxHeightTextBox";
-            this.maxHeightTextBox.Size = new System.Drawing.Size(200, 20);
-            this.maxHeightTextBox.TabIndex = 26;
-            // 
-            // minHeightTextBox
-            // 
-            this.minHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.minHeightTextBox.Location = new System.Drawing.Point(158, 305);
-            this.minHeightTextBox.Name = "minHeightTextBox";
-            this.minHeightTextBox.Size = new System.Drawing.Size(200, 20);
-            this.minHeightTextBox.TabIndex = 25;
-            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -407,6 +393,199 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tacho";
+            // 
+            // tachoLabel
+            // 
+            this.tachoLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tachoLabel.AutoSize = true;
+            this.tachoLabel.Location = new System.Drawing.Point(158, 38);
+            this.tachoLabel.Name = "tachoLabel";
+            this.tachoLabel.Size = new System.Drawing.Size(35, 13);
+            this.tachoLabel.TabIndex = 1;
+            this.tachoLabel.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fahrrad";
+            // 
+            // bikeComboBox
+            // 
+            this.bikeComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bikeComboBox.FormattingEnabled = true;
+            this.bikeComboBox.Location = new System.Drawing.Point(158, 64);
+            this.bikeComboBox.Name = "bikeComboBox";
+            this.bikeComboBox.Size = new System.Drawing.Size(200, 21);
+            this.bikeComboBox.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Gefahrende [km]";
+            // 
+            // distanceTextBox
+            // 
+            this.distanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.distanceTextBox.Location = new System.Drawing.Point(158, 95);
+            this.distanceTextBox.Name = "distanceTextBox";
+            this.distanceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.distanceTextBox.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Fahrzeit [h:mm:ss]";
+            // 
+            // timeTextBox
+            // 
+            this.timeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.timeTextBox.Location = new System.Drawing.Point(158, 125);
+            this.timeTextBox.Name = "timeTextBox";
+            this.timeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.timeTextBox.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Ø Geschwindigkeit [km/h]";
+            // 
+            // vavgTextBox
+            // 
+            this.vavgTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.vavgTextBox.Location = new System.Drawing.Point(158, 155);
+            this.vavgTextBox.Name = "vavgTextBox";
+            this.vavgTextBox.Size = new System.Drawing.Size(200, 20);
+            this.vavgTextBox.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 188);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Max. Geschwindigkeit [km/h]";
+            // 
+            // vmaxTextBox
+            // 
+            this.vmaxTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.vmaxTextBox.Location = new System.Drawing.Point(158, 185);
+            this.vmaxTextBox.Name = "vmaxTextBox";
+            this.vmaxTextBox.Size = new System.Drawing.Size(200, 20);
+            this.vmaxTextBox.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 218);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Kadenz [U/min]";
+            // 
+            // cadenceTextBox
+            // 
+            this.cadenceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cadenceTextBox.Location = new System.Drawing.Point(158, 215);
+            this.cadenceTextBox.Name = "cadenceTextBox";
+            this.cadenceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.cadenceTextBox.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 248);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Teilstrecke Distanz [km]";
+            // 
+            // tsDistanceTextBox
+            // 
+            this.tsDistanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tsDistanceTextBox.Location = new System.Drawing.Point(158, 245);
+            this.tsDistanceTextBox.Name = "tsDistanceTextBox";
+            this.tsDistanceTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tsDistanceTextBox.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 278);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Teilstrecke Zeit [h:mm:ss]";
+            // 
+            // tsTimeTextBox
+            // 
+            this.tsTimeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tsTimeTextBox.Location = new System.Drawing.Point(158, 275);
+            this.tsTimeTextBox.Name = "tsTimeTextBox";
+            this.tsTimeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tsTimeTextBox.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 308);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(130, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Min Höhenmeter [m ü.NN]";
+            // 
+            // minHeightTextBox
+            // 
+            this.minHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.minHeightTextBox.Location = new System.Drawing.Point(158, 305);
+            this.minHeightTextBox.Name = "minHeightTextBox";
+            this.minHeightTextBox.Size = new System.Drawing.Size(200, 20);
+            this.minHeightTextBox.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 338);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 13);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Max Höhenmeter [m ü.NN]";
             // 
             // flowLayoutPanel1
             // 
@@ -439,190 +618,21 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
-            // label10
+            // maxHeightTextBox
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 278);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 13);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Teilstrecke Zeit [h:mm:ss]";
+            this.maxHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.maxHeightTextBox.Location = new System.Drawing.Point(158, 335);
+            this.maxHeightTextBox.Name = "maxHeightTextBox";
+            this.maxHeightTextBox.Size = new System.Drawing.Size(200, 20);
+            this.maxHeightTextBox.TabIndex = 26;
             // 
-            // tsTimeTextBox
+            // tachoMitRadVerknüpfenToolStripMenuItem
             // 
-            this.tsTimeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tsTimeTextBox.Location = new System.Drawing.Point(158, 275);
-            this.tsTimeTextBox.Name = "tsTimeTextBox";
-            this.tsTimeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.tsTimeTextBox.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 248);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Teilstrecke Distanz [km]";
-            // 
-            // tsDistanceTextBox
-            // 
-            this.tsDistanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tsDistanceTextBox.Location = new System.Drawing.Point(158, 245);
-            this.tsDistanceTextBox.Name = "tsDistanceTextBox";
-            this.tsDistanceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.tsDistanceTextBox.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 218);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Kadenz [U/min]";
-            // 
-            // cadenceTextBox
-            // 
-            this.cadenceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cadenceTextBox.Location = new System.Drawing.Point(158, 215);
-            this.cadenceTextBox.Name = "cadenceTextBox";
-            this.cadenceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.cadenceTextBox.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 188);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Max. Geschwindigkeit [km/h]";
-            // 
-            // vmaxTextBox
-            // 
-            this.vmaxTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.vmaxTextBox.Location = new System.Drawing.Point(158, 185);
-            this.vmaxTextBox.Name = "vmaxTextBox";
-            this.vmaxTextBox.Size = new System.Drawing.Size(200, 20);
-            this.vmaxTextBox.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Ø Geschwindigkeit [km/h]";
-            // 
-            // vavgTextBox
-            // 
-            this.vavgTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.vavgTextBox.Location = new System.Drawing.Point(158, 155);
-            this.vavgTextBox.Name = "vavgTextBox";
-            this.vavgTextBox.Size = new System.Drawing.Size(200, 20);
-            this.vavgTextBox.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Fahrzeit [h:mm:ss]";
-            // 
-            // timeTextBox
-            // 
-            this.timeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.timeTextBox.Location = new System.Drawing.Point(158, 125);
-            this.timeTextBox.Name = "timeTextBox";
-            this.timeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.timeTextBox.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Gefahrende [km]";
-            // 
-            // distanceTextBox
-            // 
-            this.distanceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.distanceTextBox.Location = new System.Drawing.Point(158, 95);
-            this.distanceTextBox.Name = "distanceTextBox";
-            this.distanceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.distanceTextBox.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fahrrad";
-            // 
-            // bikeComboBox
-            // 
-            this.bikeComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bikeComboBox.FormattingEnabled = true;
-            this.bikeComboBox.Location = new System.Drawing.Point(158, 64);
-            this.bikeComboBox.Name = "bikeComboBox";
-            this.bikeComboBox.Size = new System.Drawing.Size(200, 21);
-            this.bikeComboBox.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tacho";
-            // 
-            // tachoLabel
-            // 
-            this.tachoLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tachoLabel.AutoSize = true;
-            this.tachoLabel.Location = new System.Drawing.Point(158, 38);
-            this.tachoLabel.Name = "tachoLabel";
-            this.tachoLabel.Size = new System.Drawing.Size(35, 13);
-            this.tachoLabel.TabIndex = 1;
-            this.tachoLabel.Text = "label2";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 308);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 13);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Min Höhenmeter [m ü.NN]";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 338);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 13);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Max Höhenmeter [m ü.NN]";
+            this.tachoMitRadVerknüpfenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tachoMitRadVerknüpfenToolStripMenuItem.Image")));
+            this.tachoMitRadVerknüpfenToolStripMenuItem.Name = "tachoMitRadVerknüpfenToolStripMenuItem";
+            this.tachoMitRadVerknüpfenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.tachoMitRadVerknüpfenToolStripMenuItem.Text = "Tacho mit Rad verknüpfen";
+            this.tachoMitRadVerknüpfenToolStripMenuItem.Click += new System.EventHandler(this.tachoMitRadVerknüpfenToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -714,6 +724,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox maxHeightTextBox;
         private System.Windows.Forms.TextBox minHeightTextBox;
+        private System.Windows.Forms.ToolStripMenuItem tachoMitRadVerknüpfenToolStripMenuItem;
     }
 }
 

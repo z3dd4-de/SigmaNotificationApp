@@ -79,6 +79,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentDictionary.cs" />
+    <Compile Include="BikeInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BikeInfoForm.Designer.cs">
+      <DependentUpon>BikeInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelpForm.cs">
       <SubType>Form</SubType>
@@ -120,6 +128,9 @@
     <Compile Include="SigmaReader.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BikeInfoForm.resx">
+      <DependentUpon>BikeInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
@@ -167,6 +178,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app_english.png" />
+    <Content Include="app_german.png" />
+    <Content Include="assign_speedometer_english.png" />
+    <Content Include="assign_speedometer_german.png" />
     <Content Include="Elegantthemes-Beautiful-Flat-One-Color-Bike.ico" />
     <Content Include="help.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -177,6 +192,12 @@
     <Content Include="help_html_1acd0d04.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="options_english.png" />
+    <Content Include="options_german.png" />
+    <Content Include="read_speedometer_english.png" />
+    <Content Include="read_speedometer_german.png" />
+    <Content Include="settings_english.png" />
+    <Content Include="settings_german.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

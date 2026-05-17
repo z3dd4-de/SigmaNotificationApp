@@ -5,7 +5,8 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 25.8.5.2 (Windows)"/>
 	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="2026-04-25T18:00:34.591083600"/>
+	<meta name="changed" content="2026-04-26T23:50:26.920107300"/>
+	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
@@ -33,7 +34,7 @@
 <p>Es sollten alle Tachos der Topline 2009/2012-Reihe unterstützt
 werden. Wer einen anderen davon zum Laufen bekommt (sieht Github-Link
 in den Quellen), kann mir gerne die ID mitteilen, damit ich den
-allgemein verfügbar machen kann (siehe Bekannte Tacho-IDs).</p>
+allgemein verfügbar machen kann (siehe bekannte Tacho-IDs).</p>
 <p><br/>
 <br/>
 
@@ -41,7 +42,8 @@ allgemein verfügbar machen kann (siehe Bekannte Tacho-IDs).</p>
 <h2 class="western">2. Installation</h2>
 <p>ZIP-Installationspaket von Github herunterladen, an beliebigen Ort
 entpacken.</p>
-<p>„SigmaNotificationApp.exe“ starten, nach Bedarf Link anlegen.</p>
+<p>„SigmaNotificationApp.exe“ starten, nach Bedarf Link z.B. auf
+dem Desktop anlegen.</p>
 <p><br/>
 <br/>
 
@@ -72,22 +74,29 @@ gesichert werden.
 </p>
 <p><font color="#c9211e"><b>Die eigentliche Aufgabe dieser Anwendung
 ist nur das Auslesen der Tachodaten. </b></font>Um sie sinnvoll
-verwenden zu können, wird empfohlen, dass die <b>BikeDB 202</b><b>6</b><b>
-</b>zur Verwaltung der Fahrraddaten benutzt wird. Dies ist eine
-mächtige Verwaltungssoftware für alles mögliche: verschiedene
-Fahrräder, Strecken, Fahrten, etc.</p>
+verwenden zu können, wird empfohlen, dass die <b>BikeDB 2026</b> zur
+Verwaltung der Fahrraddaten benutzt wird. Dies ist eine mächtige
+Verwaltungssoftware für alles mögliche: verschiedene Fahrräder,
+Strecken, Fahrten, etc.</p>
 <p><br/>
 <br/>
 
 </p>
 <h2 class="western">4. Speicher-Format</h2>
-<p>In der Version 1.0 erzeugt die Anwendung nur eine JSON-Datei
-„bikedata.json“, die jedes Mal überschrieben wird. Die
-eigentliche Aufgabe dieser Anwendung ist nämlich die Verwendung
-innerhalb der <b>BikeDB 202</b><b>6</b><span style="font-weight: normal">,</span>
-die ebenfalls auf meinem Github-Account kostenlos verfügbar ist
-(siehe Quellen). 
-</p>
+<p>Die Anwendung erzeugt eine JSON-Datei
+„<i>bikedata</i><i>_JJJJMMTT-HHmm</i><i>.json</i>“. Der
+Zeitstempel ist die Uhrzeit, die im Datum mit Uhrzeit der Anwendung
+ausgewählt wurde. Man kann rückdatieren, wenn die Daten des Tachos
+später ausgelesen werden. Die Uhrzeit ist nicht wirklich wichtig,
+außer, man will z.B. mehrere Fahrten an einem Tag protokollieren,
+z.B. zuerst zur Arbeit, dann den Rückweg und abends eine richtige
+Tour. Die eigentliche Aufgabe dieser Anwendung ist allerdings die
+Verwendung innerhalb der <b>BikeDB 2026</b><span style="font-weight: normal">,</span>
+die ebenfalls auf meinem Github-Account verfügbar ist (siehe
+Quellen).</p>
+<p>Alternativ kann man <b>BikeDB Trax 2026</b> verwenden, die auf
+einem Smartphone dieselben Dateien erstellt. Hier bräuchte man weder
+einen Sigma Tachometer, noch diese Anwendung.</p>
 <p><br/>
 <br/>
 
@@ -170,22 +179,20 @@ C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
 { </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 }</font></font></font></p>
-<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MinAltitudeMeters</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MinAltitudeMeters</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}
-= 0;</font></font></font></p>
-<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxAltitudeMeters</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
-</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+} = 0;</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxAltitudeMeters</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
-</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}
-= 0;</font></font></font></p>
+} = 0;</font></font></font></p>
 <p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <br/>
 
@@ -220,7 +227,7 @@ C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
 	<li><p>Liste mit verfügbaren Fahrrädern</p></li>
 	<li><p>Sprache (Deutsch/Englisch)*</p></li>
 </ul>
-<p>* Hinweis: die BikeDB2025 ist bisher nur in Deutsch verfügbar</p>
+<p>* Hinweis: die BikeDB2026 ist bisher nur in Deutsch verfügbar</p>
 <p><br/>
 <br/>
 
@@ -234,21 +241,28 @@ C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
 			von Alfonso Martone 
 			</p>
 		</td>
-		<td width="50%" style="border: none; padding: 0cm"><p>https://gitlab.com/ciofeca/sdsdata</p>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://gitlab.com/ciofeca/sdsdata">https://gitlab.com/ciofeca/sdsdata</a></p>
 		</td>
 	</tr>
 	<tr valign="top">
 		<td width="50%" style="border: none; padding: 0cm"><p>Github-Link
 			für die Sigma Notification App</p>
 		</td>
-		<td width="50%" style="border: none; padding: 0cm"><p>https://github.com/z3dd4-de/SigmaNotificationApp</p>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/SigmaNotificationApp">https://github.com/z3dd4-de/SigmaNotificationApp</a></p>
 		</td>
 	</tr>
 	<tr valign="top">
 		<td width="50%" style="border: none; padding: 0cm"><p>Github-Link
-			BikeDB 2025</p>
+			BikeDB2025 (aktuelle Version: BikeDB 2026)</p>
 		</td>
-		<td width="50%" style="border: none; padding: 0cm"><p>https://github.com/z3dd4-de/BikeDB2025</p>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/BikeDB2025">https://github.com/z3dd4-de/BikeDB2025</a></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>Github-Link
+			BikeDB Trax 2026</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/BikeDB-Trax-2026">https://github.com/z3dd4-de/BikeDB-Trax-2026</a></p>
 		</td>
 	</tr>
 </table>
