@@ -11,7 +11,7 @@ namespace SigmaNotificationApp
         public AboutBox1()
         {
             InitializeComponent();
-            this.Text = String.Format("Info über {0}", AssemblyTitle);
+            this.Text = String.Format("Info about {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
@@ -25,7 +25,7 @@ namespace SigmaNotificationApp
                 this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
                 this.labelCopyright.Text = AssemblyCopyright;
                 this.labelCompanyName.Text = AssemblyCompany;
-                this.textBoxDescription.Text = "A small app to read speedometer data from a Sigma Docking Station on Windows."; 
+                this.textBoxDescription.Text = "A small app to create JSON files for the BikeDB."; 
             }
         }
 

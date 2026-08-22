@@ -26,6 +26,18 @@ namespace SigmaDockingLib
         public uint TripSectionTimeSeconds { get; set; }
         public double MinAltitudeMeters { get; set; } = 0;   // ← neu
         public double MaxAltitudeMeters { get; set; } = 0;   // ← neu
+        public double HeartRate { get; set; }             // ← neu
+        public double NormalizedPower { get; set; }       // ← neu
+        public uint Profile { get; set; }               // ← neu
+        public string Weather { get; set; }               // ← neu
+        public string WeatherId { get; set; }               // ← neu
+        public string WeatherIcon { get; set; }               // ← neu
+        public uint Feeling { get; set; }               // ← neu
+        public double WindSpeed { get; set; }                  // ← neu
+        public double WindDirection { get; set; }                  // ← neu
+        public string WindCompass { get; set; }               // ← neu
+        public double Temperature { get; set; }         // ← neu
+        public DateTime WeatherTimestamp { get; set; } // ← neu
 
         // Computed properties – werden nicht in JSON serialisiert
         public double DistanceKm => DistanceMeters / 1000.0;

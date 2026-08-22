@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("Sigma Docking Station Reader")]
-[assembly: AssemblyDescription("Ein kleines Programm, um die Sigma Docking Station unter Windows auszulesen.")]
+[assembly: AssemblyTitle("BikeDB Json Creator (BJC)")]
+[assembly: AssemblyDescription("Ein kleines Programm, um JSON-Dateien für die BikeDB zu erstellen.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("z3dn3t")]
-[assembly: AssemblyProduct("SigmaNotificationApp")]
+[assembly: AssemblyProduct("BikeDBJsonCreator")]
 [assembly: AssemblyCopyright("Copyright ©  2025-2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

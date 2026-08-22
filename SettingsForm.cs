@@ -9,11 +9,25 @@ namespace SigmaNotificationApp
         {
             InitializeComponent();
             loadLanguage(this, EventArgs.Empty);
+            loadCities();
         }
 
         private void clearTachoButton_Click(object sender, EventArgs e)
         {
             // Not implemented yet
+        }
+
+        private void loadCities()
+        {
+            if (Properties.Settings.Default.ManualCity != String.Empty)
+            {
+                locationComboBox.Items.Clear();
+                string[] cities = Properties.Settings.Default.ManualCity.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var city in cities)
+                {
+                    locationComboBox.Items.Add(city);
+                }
+            }
         }
 
         private void addTachoButton_Click(object sender, EventArgs e)
@@ -105,6 +119,13 @@ namespace SigmaNotificationApp
             }
             // Load SaveFolder
             saveFolderTextBox.Text = Properties.Settings.Default.SaveFolder;
+            // Load Location
+            locationComboBox.SelectedItem = Properties.Settings.Default.ManualCity;
+            // Load UseLocalization
+            locationCheckBox.Checked = Properties.Settings.Default.UseLocalization;
+            // Load UseWeather
+            weatherCheckBox.Checked = Properties.Settings.Default.UseWeather;
+            apiTextBox.Text = Properties.Settings.Default.ApiKey;
         }
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -120,26 +141,70 @@ namespace SigmaNotificationApp
                 groupBox1.Text = "Tacho";
                 groupBox2.Text = "Fahrrad";
                 groupBox3.Text = "Speicherort";
+                groupBox4.Text = "Standort";
+                cityLabel.Text = "Stadt";
                 clearTachoButton.Text = "Löschen";
                 clearBikeBbutton.Text = "Löschen";
                 addTachoButton.Text = "Hinzufügen";
                 addBikeButton.Text = "Hinzufügen";
+                locationCheckBox.Text = "Automatisch (Windows-Standort)";
+                weatherCheckBox.Text = "Verwenden";
+                apiLabel.Text = "API-Schlüssel";
                 if (string.IsNullOrWhiteSpace(saveFolderTextBox.Text))
                     saveFolderTextBox.Text = "Kein Speicherort ausgewählt";
             }
             else
             {
+                Properties.Settings.Default.Language = "en";
                 this.Text = "Settings";
                 groupBox1.Text = "Speedometer";
                 groupBox2.Text = "Bike";
                 groupBox3.Text = "Save location";
+                groupBox4.Text = "Location";
+                cityLabel.Text = "City";
                 clearTachoButton.Text = "Delete";
                 clearBikeBbutton.Text = "Delete";
                 addTachoButton.Text = "Add";
                 addBikeButton.Text = "Add";
+                locationCheckBox.Text = "Automatic (Windows location)";
+                weatherCheckBox.Text = "Use";
+                apiLabel.Text = "API key";
                 if (string.IsNullOrWhiteSpace(saveFolderTextBox.Text))
                     saveFolderTextBox.Text = "No save location selected";
             }
+        }
+
+        private void locationCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (locationCheckBox.Checked)
+            {
+                Properties.Settings.Default.UseLocalization = true;
+                locationComboBox.Enabled = false;
+            }
+            else
+            {
+                Properties.Settings.Default.UseLocalization = false;
+                locationComboBox.Enabled = true;
+            }
+        }
+
+        private void weatherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (weatherCheckBox.Checked)
+            {
+                Properties.Settings.Default.UseWeather = true;
+                apiTextBox.Enabled = true;
+            }
+            else
+            {
+                Properties.Settings.Default.UseWeather = false;
+                apiTextBox.Enabled = false;
+            }
+        }
+
+        private void apiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ApiKey = apiTextBox.Text;
         }
     }
 }

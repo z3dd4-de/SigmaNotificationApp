@@ -5,13 +5,16 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SigmaDockingLib;
+using System.Device.Location;
+using System.Net.Http;
+using System.Linq;
 
 namespace SigmaNotificationApp
 {
     public partial class MainForm : Form
     {
         private SigmaReader reader = new SigmaReader();
-        private System.Windows.Forms.Timer monitorTimer;
+        private Timer monitorTimer;
         private BikeComputerInfo? lastDetectedComputer = null;
         private bool isReading = false; // Verhindert parallele Zugriffe
 
@@ -28,7 +31,12 @@ namespace SigmaNotificationApp
         private string unknownText = "Unbekannt";
         private string fileSavedText = "Datei erfolgreich gespeichert: ";
         private string fileSaveErrorText = "Fehler beim Speichern der Datei.";
-        
+        private string errorReadingLocationText = "Fehler beim Abrufen der Standortdaten.\nBitte Standortdienste aktivieren.";
+        private string weatherDataDisabledText = "Wetterdaten deaktiviert";
+        private string weatherDataEnabledText = "Bitte erst Wetterdaten abrufen...";
+        private string weatherDataButtonText = "Wetterdaten abrufen";
+        private string enterCityOrEnableLocationText = "Bitte geben Sie eine Stadt ein oder aktivieren Sie die automatische Standortbestimmung.";
+        private string errorReadingWeatherText = "Fehler bei der Anfrage:";
         AssignmentDictionary assignmentDictionary = new AssignmentDictionary();
 
         private enum AppState
@@ -37,14 +45,31 @@ namespace SigmaNotificationApp
             NotifyIcon
         }
 
+        public GeoCoordinate GpsCoordinate { get; set; }
+        private bool locationFound = false;
+        public WeatherData LastWeatherData { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
+            SetFormSizeAndLocation();
+            cloudLabel.Text = String.Empty;
+            tempLabel.Text = String.Empty;
+            winddirectionLabel.Text = String.Empty;
+            windspeedLabel.Text = String.Empty;
+            weatherLogLabel.Text = String.Empty;
+            timestampLabel.Text = String.Empty;
+            if (Properties.Settings.Default.Language == "de")
+                SetLanguage("de");
+            else
+                SetLanguage("en");
+
             connectedToolStripStatusLabel.Visible = false;
             notConnectedToolStripStatusLabel.Visible = false;
             tachoToolStripStatusLabel.Visible = false;
             tachoLabel.Text = notConnectedText;
             LoadBikeList();
+            LoadCityList();
             assignmentDictionary.LoadSettings();
 
             // Event für Log-Meldungen
@@ -58,10 +83,205 @@ namespace SigmaNotificationApp
             };
 
             // Timer für Hintergrund-Monitoring
-            monitorTimer = new System.Windows.Forms.Timer();
+            monitorTimer = new Timer();
             monitorTimer.Interval = 10000; // 10 Sekunden
             monitorTimer.Tick += MonitorTimer_Tick;
             monitorTimer.Start();
+
+            GetLocationProperty();
+            LastWeatherData = new WeatherData(GetPath());
+        }
+
+        private void SetFormSizeAndLocation()
+        {
+            if (Properties.Settings.Default.WindowSize != Size.Empty)
+            {
+                Location = Properties.Settings.Default.WindowLocation;
+                Size = Properties.Settings.Default.WindowSize;
+            }
+            else
+            {
+                // Standardgröße und -position setzen, falls keine gespeicherten Werte vorhanden sind
+                Size = new Size(368, 603);
+                Location = new Point(50, 50);
+            }
+        }
+
+        private string GetPath()
+        {
+            string path = Properties.Settings.Default.SaveFolder;
+            if (string.IsNullOrEmpty(path))
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            }
+            return path;
+        }
+
+        public void GetLocationProperty()
+        {
+            GeoCoordinateWatcher watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+
+            watcher.PositionChanged += (sender, e) =>
+            {
+                GeoCoordinate coord = e.Position.Location;
+                if (!coord.IsUnknown)
+                {
+                    GpsCoordinate = coord;
+                    Console.WriteLine($"Breitengrad: {coord.Latitude}, Längengrad: {coord.Longitude}");
+                    locationFound = true;
+                }
+                else
+                {
+                    Console.WriteLine("Location unknown.");
+                    GpsCoordinate = null;
+                    locationFound = false;
+                }
+            };
+
+            watcher.Start();
+        }
+
+        private async Task GetCoordinate()
+        {
+            if (GpsCoordinate != null)
+            {
+                double latitude = GpsCoordinate.Latitude;
+                double longitude = GpsCoordinate.Longitude;
+                Console.WriteLine($"Breitengrad: {latitude}, Längengrad: {longitude}");
+
+                await GetWeatherDataAsync(latitude, longitude);
+            }
+            else
+            {
+                Console.WriteLine("Location unknown.");
+            }
+        }
+
+        public async Task GetWeatherDataAsync(double latitude, double longitude)
+        {
+            string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // JSON parsen mit System.Text.Json
+                    using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
+                    {
+                        JsonElement root = doc.RootElement;
+                        JsonElement wind = root.GetProperty("wind");
+                        double speed = wind.GetProperty("speed").GetDouble();
+                        double deg = wind.GetProperty("deg").GetDouble();
+
+                        //Console.WriteLine($"Windgeschwindigkeit: {speed} m/s");
+                        //Console.WriteLine($"Windrichtung: {deg}°");
+                        string direction = Compass.GetDirectionName(deg);
+                        int bft = ConvertMpsToBeaufort(speed);
+                        winddirectionLabel.Text = $"{deg}° ({direction})";
+                        windspeedLabel.Text = $"{speed} m/s ({bft} Bft)";
+
+                        string cityName = root.GetProperty("name").GetString();
+                        double temp = root.GetProperty("main").GetProperty("temp").GetDouble();
+                        string description = root.GetProperty("weather")[0].GetProperty("description").GetString();
+                        string weatherIcon = root.GetProperty("weather")[0].GetProperty("icon").GetString();
+                        LastWeatherData.GetPngPath(weatherIcon);
+
+                        weatherPictureBox.ImageLocation = LastWeatherData.GetPngPath(weatherIcon);
+                        weatherLogLabel.Text = String.Empty;
+
+                        //Console.WriteLine($"Stadt: {cityName}");
+                        locationComboBox.SelectedText = $"{cityName}";
+
+                        //Console.WriteLine($"Temperatur: {temp} °C");
+                        tempLabel.Text = $"{temp} °C";
+
+                        //Console.WriteLine($"Zustand: {description}");
+                        cloudLabel.Text = $"{description}";
+
+                        timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
+
+                        LastWeatherData.Temperature = temp;
+                        LastWeatherData.WindSpeed = speed;
+                        LastWeatherData.WindDirection = deg;
+                        LastWeatherData.WindCompass = direction;
+                        LastWeatherData.WeatherDescription = description;
+                        LastWeatherData.WeatherId = weatherIcon;
+                        LastWeatherData.ImageLocation = LastWeatherData.GetPngPath(weatherIcon);
+                        LastWeatherData.Timestamp = DateTime.Now;
+                    }
+                }
+                catch (HttpRequestException e)
+                {
+                    //Console.WriteLine($"Fehler bei der Anfrage: {e.Message}");
+                    weatherLogLabel.Text = $"{errorReadingWeatherText} {e.Message}";
+                }
+            }
+        }
+
+        public async Task GetWeatherDataAsync(string cityName)
+        {
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    // JSON parsen mit System.Text.Json
+                    using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
+                    {
+                        JsonElement root = doc.RootElement;
+                        JsonElement wind = root.GetProperty("wind");
+                        double speed = wind.GetProperty("speed").GetDouble();
+                        double deg = wind.GetProperty("deg").GetDouble();
+                        //Console.WriteLine($"Windgeschwindigkeit: {speed} m/s");
+                        //Console.WriteLine($"Windrichtung: {deg}°");
+                        string direction = Compass.GetDirectionName(deg);
+                        int bft = ConvertMpsToBeaufort(speed);
+                        winddirectionLabel.Text = $"{deg}° ({direction})";
+                        windspeedLabel.Text = $"{speed} m/s ({bft} Bft)";
+                        string cityNameResponse = root.GetProperty("name").GetString();
+                        double temp = root.GetProperty("main").GetProperty("temp").GetDouble();
+                        string description = root.GetProperty("weather")[0].GetProperty("description").GetString();
+                        string weatherIcon = root.GetProperty("weather")[0].GetProperty("icon").GetString();
+                        
+                        weatherPictureBox.ImageLocation = LastWeatherData.GetPngPath(weatherIcon);
+                        weatherLogLabel.Text = String.Empty;
+
+                        //Console.WriteLine($"Stadt: {cityName}");
+                        locationComboBox.SelectedText = $"{cityName}";
+
+                        //Console.WriteLine($"Temperatur: {temp} °C");
+                        tempLabel.Text = $"{temp} °C";
+
+                        //Console.WriteLine($"Zustand: {description}");
+                        cloudLabel.Text = $"{description}";
+
+                        timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
+
+                        LastWeatherData.Temperature = temp;
+                        LastWeatherData.WindSpeed = speed;
+                        LastWeatherData.WindDirection = deg;
+                        LastWeatherData.WindCompass = direction;
+                        LastWeatherData.WeatherDescription = description;
+                        LastWeatherData.WeatherId = weatherIcon;
+                        LastWeatherData.ImageLocation = LastWeatherData.GetPngPath(weatherIcon);
+                        LastWeatherData.Timestamp = DateTime.Now;
+                    }
+                }
+                catch (HttpRequestException e)
+                {
+                    //Console.WriteLine($"Fehler bei der Anfrage: {e.Message}");
+                    weatherLogLabel.Text = $"{errorReadingWeatherText} {e.Message}";
+                }
+            }
         }
 
         private void LoadBikeList()
@@ -72,6 +292,17 @@ namespace SigmaNotificationApp
             {
                 var bikes = bikeCollection.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 bikeComboBox.Items.AddRange(bikes);
+            }
+        }
+
+        private void LoadCityList()
+        {
+            locationComboBox.Items.Clear();
+            string cityCollection = Properties.Settings.Default.ManualCity;
+            if (!string.IsNullOrEmpty(cityCollection))
+            {
+                var cities = cityCollection.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                locationComboBox.Items.AddRange(cities);
             }
         }
 
@@ -234,9 +465,7 @@ namespace SigmaNotificationApp
             // Mapping Seriennummer -> Fahrrad speichern
             if (lastDetectedComputer != null && !string.IsNullOrEmpty(bikeComboBox.Text))
             {
-                //string settingKey = $"Bike_{lastDetectedComputer.SerialNumber}";
                 assignmentDictionary.AddAssignment(lastDetectedComputer.SerialNumber.ToString(), bikeComboBox.Text);
-                //Properties.Settings.Default[settingKey] = bikeComboBox.Text;
                 Properties.Settings.Default.Save();
             }
         }
@@ -244,8 +473,12 @@ namespace SigmaNotificationApp
         private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            if (settingsForm.ShowDialog(this) == DialogResult.OK)
+            if (settingsForm.ShowDialog(this) == DialogResult.OK) 
+            { 
                 LoadBikeList();
+                LastWeatherData.RootDir = Properties.Settings.Default.SaveFolder;
+                LastWeatherData.CheckPngDir();
+            }
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -280,7 +513,7 @@ namespace SigmaNotificationApp
             RideData rideData = new RideData
             {
                 TachoName = lastDetectedComputer?.ModelName ?? unknownText,
-                BikeName = bikeComboBox.Text,   
+                BikeName = bikeComboBox.Text,
                 DistanceMeters = distanceMeters,
                 TimeSeconds = timeSeconds,
                 MeanSpeedKmh = double.TryParse(vavgTextBox.Text, out double vavg) ? vavg : 0,
@@ -289,8 +522,20 @@ namespace SigmaNotificationApp
                 Timestamp = dateTimePicker.Value,
                 TripSectionDistanceMeters = (uint)(double.TryParse(tsDistanceTextBox.Text, out double tsDist) ? tsDist * 1000 : 0),
                 TripSectionTimeSeconds = (uint)(TimeSpan.TryParse(tsTimeTextBox.Text, out TimeSpan tsDur) ? tsDur.TotalSeconds : 0),
-                MinAltitudeMeters = double.TryParse(minHeightTextBox.Text, out double minh) ? minh : 0, 
-                MaxAltitudeMeters = double.TryParse(maxHeightTextBox.Text, out double maxh) ? maxh : 0
+                MinAltitudeMeters = double.TryParse(minHeightTextBox.Text, out double minh) ? minh : 0,
+                MaxAltitudeMeters = double.TryParse(maxHeightTextBox.Text, out double maxh) ? maxh : 0,
+                // Wetterdaten (12.8.26)
+                WeatherId = LastWeatherData.WeatherId ?? string.Empty,
+                Weather = LastWeatherData.WeatherDescription ?? string.Empty,
+                WindSpeed = LastWeatherData.WindSpeed,
+                WindDirection = LastWeatherData.WindDirection,
+                WindCompass = LastWeatherData.WindCompass ?? string.Empty,
+                Temperature = LastWeatherData.Temperature,
+                WeatherTimestamp = LastWeatherData.Timestamp,
+                WeatherIcon = LastWeatherData.ImageLocation ?? string.Empty,
+                // HeartRate und NormalizedPower (14.8.26)
+                HeartRate = double.TryParse(avgHeartRateTextBox.Text, out double avgHr) ? avgHr : 0,
+                NormalizedPower = double.TryParse(normalizedPowerTextBox.Text, out double np) ? np : 0
             };
 
             string fileName = "bikedata_" + dateTimePicker.Value.ToString("yyyyMMdd-HHmm") + ".json";
@@ -367,7 +612,8 @@ namespace SigmaNotificationApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             SetLanguage(Properties.Settings.Default.Language);
-            if (Properties.Settings.Default.WindowSize != Size.Empty) { 
+            if (Properties.Settings.Default.WindowSize != Size.Empty)
+            {
                 Location = Properties.Settings.Default.WindowLocation;
                 Size = Properties.Settings.Default.WindowSize;
                 AppState savedState = (AppState)Properties.Settings.Default.AppMode;
@@ -381,6 +627,14 @@ namespace SigmaNotificationApp
                     dsNotifyIcon.Visible = false;
                     Show();
                 }
+            }
+            if (Properties.Settings.Default.UseWeather)
+            {
+                weatherToolStripButton.Enabled = true;
+            }
+            else
+            {
+                weatherToolStripButton.Enabled = false;
             }
         }
 
@@ -407,6 +661,17 @@ namespace SigmaNotificationApp
                 label10.Text = "Teilstrecke Zeit [h:mm:ss]";
                 label12.Text = "Min Höhenmeter [m ü.NN]";
                 label13.Text = "Max Höhenmeter [m ü.NN]";
+                label16.Text = "Ø Herzfrequenz [min⁻¹]";
+                label20.Text = "Normalisierte Leistung [W]";
+
+                //Wetter Tab
+                label2.Text = "Wetter";
+                label15.Text = "Temperatur";
+                label17.Text = "Ort";
+                label18.Text = "Windgeschwindigkeit";
+                label19.Text = "Windrichtung";
+                label14.Text = "Uhrzeit";
+                addCityButton.Text = "&Hinzufügen";
 
                 dateiToolStripMenuItem.Text = "&Datei";
                 beendenToolStripMenuItem.Text = "Be&enden";
@@ -442,6 +707,21 @@ namespace SigmaNotificationApp
                 fileSavedText = "Datei erfolgreich gespeichert: ";
                 fileSaveErrorText = "Fehler beim Speichern der Datei.";
                 tachoMitRadVerknüpfenToolStripMenuItem.Text = "Tacho mit Rad verknüpfen";
+                if (Properties.Settings.Default.UseWeather)
+                    weatherLogLabel.Text = "Bitte erst Wetterdaten abrufen...";
+                else 
+                    weatherLogLabel.Text = "Wetterdaten deaktiviert";
+                weatherToolStripButton.Text = "Wetterdaten abrufen";
+
+                errorReadingLocationText = "Fehler beim Abrufen der Standortdaten.\nBitte Standortdienste aktivieren.";
+                weatherDataDisabledText = "Wetterdaten deaktiviert";
+                weatherDataEnabledText = "Bitte erst Wetterdaten abrufen...";
+                weatherDataButtonText = "Wetterdaten abrufen";
+                enterCityOrEnableLocationText = "Bitte geben Sie eine Stadt ein oder aktivieren Sie die automatische Standortbestimmung.";
+                errorReadingWeatherText = "Fehler bei der Anfrage:";
+
+                tabControl1.TabPages[0].Text = "Tacho";
+                tabControl1.TabPages[1].Text = "Wetter";
             }
             else if (lang == "en")
             {
@@ -457,6 +737,17 @@ namespace SigmaNotificationApp
                 label10.Text = "Leg time [h:mm:ss]";
                 label12.Text = "Min height [m aSL]";
                 label13.Text = "Max height [m aSL]";
+                label16.Text = "Ø Heart rate [min⁻¹]";
+                label20.Text = "Normalized power [W]";
+
+                // Weather tab
+                label2.Text = "Weather";
+                label15.Text = "Temperature";
+                label17.Text = "Location";
+                label18.Text = "Wind speed";
+                label19.Text = "Wind direction";
+                label14.Text = "Time";
+                addCityButton.Text = "&Add";
 
                 dateiToolStripMenuItem.Text = "&File";
                 beendenToolStripMenuItem.Text = "&Exit";
@@ -492,6 +783,21 @@ namespace SigmaNotificationApp
                 fileSavedText = "File successfully saved: ";
                 fileSaveErrorText = "Error saving file.";
                 tachoMitRadVerknüpfenToolStripMenuItem.Text = "Assign speedometer";
+                if (Properties.Settings.Default.UseWeather)
+                    weatherLogLabel.Text = "Please fetch weather data first...";
+                else
+                    weatherLogLabel.Text = "Weather data disabled";
+                weatherToolStripButton.Text = "Fetch weather data";
+
+                errorReadingLocationText = "Error retrieving location data.\nPlease enable location services.";
+                weatherDataDisabledText = "Weather data disabled";
+                weatherDataEnabledText = "Please fetch weather data first...";
+                weatherDataButtonText = "Fetch weather data";
+                enterCityOrEnableLocationText = "Please enter a city or enable automatic location detection.";
+                errorReadingWeatherText = "Error during request:";
+
+                tabControl1.TabPages[0].Text = "Speedometer";
+                tabControl1.TabPages[1].Text = "Weather";
             }
         }
 
@@ -505,7 +811,69 @@ namespace SigmaNotificationApp
         private void tachoMitRadVerknüpfenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BikeInfoForm bikeInfoForm = new BikeInfoForm();
-            bikeInfoForm.ShowDialog(this);
+            if (bikeInfoForm.ShowDialog(this) == DialogResult.OK)
+            {
+                LoadBikeList();
+            }
+        }
+
+        private async void weatherToolStripButton_Click(object sender, EventArgs e)
+        {
+            GetLocationProperty();
+            if (Properties.Settings.Default.UseLocalization)
+            {
+                if (!locationFound)
+                {
+                    MessageBox.Show(errorReadingLocationText, errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    await GetCoordinate();
+                }
+            }
+            if (!Properties.Settings.Default.UseLocalization && !string.IsNullOrWhiteSpace(Properties.Settings.Default.ManualCity))
+            {
+                await GetWeatherDataAsync(Properties.Settings.Default.ManualCity);
+            }
+            else if (!Properties.Settings.Default.UseLocalization && string.IsNullOrWhiteSpace(Properties.Settings.Default.ManualCity))
+            {
+                MessageBox.Show(enterCityOrEnableLocationText, errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static int ConvertMpsToBeaufort(double mps)
+        {
+            if (mps < 0) return 0;
+            if (mps < 0.3) return 0;
+            if (mps < 1.6) return 1;
+            if (mps < 3.4) return 2;
+            if (mps < 5.5) return 3;
+            if (mps < 8.0) return 4;
+            if (mps < 10.8) return 5;
+            if (mps < 13.9) return 6;
+            if (mps < 17.2) return 7;
+            if (mps < 20.8) return 8;
+            if (mps < 24.5) return 9;
+            if (mps < 28.5) return 10;
+            if (mps < 32.7) return 11;
+            return 12; // ab 32.7 m/s ist es Beaufort 12
+        }
+
+        private void addCityButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(locationComboBox.Text))
+            {
+                string newCity = locationComboBox.Text.Trim();
+                if (!locationComboBox.Items.Contains(newCity))
+                {
+                    locationComboBox.Items.Add(newCity);
+                    // Save to settings
+                    var cities = locationComboBox.Items.Cast<string>().ToArray();
+                    Properties.Settings.Default.ManualCity = string.Join(";", cities);
+                    Properties.Settings.Default.Save();
+                }
+            }
         }
     }
 }

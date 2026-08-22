@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.5.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2026-05-17T19:21:33.623289500"/>
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<meta name="created" content="00:00:00">
+	<style type="text/css">
+		@page { margin: 2cm }
+		td p { background: transparent; line-height: 115%; margin-bottom: 0.25cm; orphans: 0; widows: 0 }
+		p { background: transparent; line-height: 115%; margin-bottom: 0.25cm }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt }
+		h2.cjk { font-size: 16pt; font-family: "Microsoft YaHei" }
+		h2.ctl { font-family: "Arial"; font-size: 16pt }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><p align="center" style="line-height: 100%; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+<font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Help</b></font></font></p>
+<h2 class="western">1. Requirements</h2>
+<ul>
+	<li><p>Sigma Docking Station TL2012</p></li>
+	<li><p>Sigma Sport Computer xx.12*</p></li>
+	<li><p>Windows 10/11 64bit</p></li>
+	<li><p>Recommended: <b>BikeDB 202</b><b>6</b></p></li>
+</ul>
+<p>* Currently BC12.12, BC16.12 and BC16.12 STS are supported</p>
+<p>All computers of the <b>Topline 2009/2012</b> series should be
+supported. If you manage to get another one working (see GitHub link
+in the sources), feel free to let me know the ID so I can make it
+publicly available (see Known Computer IDs).</p>
+<p><img src="app_english.png" name="Bild1" align="left" width="368" height="515" border="0">
+  <br clear="left"/>
+</img>
+Empty
+rows will be saved as “0”.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">2. Installation</h2>
+<p>Download the ZIP installation package from GitHub and extract it
+to any location.</p>
+<p>Start “SigmaNotificationApp.exe”, create a shortcut if needed.</p>
+<p>The installed version can be linked in <b>BikeDB 2026</b> and
+started from the menu there.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">3. Usage</h2>
+<p>Start the application when the Sigma Docking Station is connected.
+Insert the computer with ride data. As soon as the message appears
+that a computer has been detected, the data can be imported.<br/>
+<img src="read_speedometer_english.png" name="Image1" align="left" width="118" height="48" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p>Either press <font face="Courier New, monospace">Speedometer →
+</font><font face="Courier New, monospace">Read Out</font> or click
+the speedometer icon.</p>
+<p>Now all fields should be filled with the available data (depending
+on the computer type used).</p>
+<p>These data can be saved by clicking the “Save” button. The
+location of the file is defined at <font face="Courier New, monospace">Options
+→ Settings</font>.</p>
+<p><br/>
+<br/>
+
+</p>
+<p><font color="#c9211e"><b>The primary purpose of this application
+is only to read out the computer data. </b></font>To use them
+effectively, it is recommended to use <b>BikeDB 2026</b> to manage
+the bicycle data. This is a powerful management software for
+everything possible: different bicycles, routes, rides, etc.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">4. Storage Format</h2>
+<p>The application generates a JSON file named
+“bikedata_YYYYMMDD-HHmm.json”. The timestamp corresponds to the
+time selected in the application's date and time settings. It is
+possible to backdate entries if the speedometer data is read out
+later. The exact time is not particularly important unless, for
+example, you want to log multiple rides in a single day—such as
+commuting to work, the return trip, and an evening tour.</p>
+<p>However, the main purpose of this application is its use within
+<b>BikeDB 2026</b>, which is also available on my GitHub account (see
+sources). Alternatively, you can use BikeDB Trax 2026, which creates
+the same files on a smartphone. In that case, you would not need a
+Sigma speedometer or this application.</p>
+<p><br/>
+<br/>
+
+</p>
+<p>If you want to program your own solution, here is the C# class
+used to serialize the JSON file:</p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">class</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">RideData</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TachoName
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeName
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DateTime</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Timestamp
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DistanceMeters
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSeconds
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MeanSpeedKmh
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxSpeedKmh
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">byte</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Cadence
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionDistanceMeters
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionTimeSeconds
+{ </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MinAltitudeMeters</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+} = 0;</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">MaxAltitudeMeters</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+} = 0;</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DistanceKm
+=&gt; DistanceMeters / 1000.0;</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Duration
+=&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000">
+</font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TripSectionDuration
+=&gt; </font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">TimeSpan</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">.FromSeconds(TripSectionTimeSeconds);</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+A working JSON file might look like this:</p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{&quot;TachoName&quot;:&quot;BC
+12.12&quot;,&quot;BikeName&quot;:&quot;Carver
+X0-3&quot;,&quot;Timestamp&quot;:&quot;2026-05-15T12:00:30&quot;,&quot;DistanceMeters&quot;:10740,&quot;TimeSeconds&quot;:1825,&quot;MeanSpeedKmh&quot;:21.18,&quot;MaxSpeedKmh&quot;:40.25,&quot;Cadence&quot;:0,&quot;TripSectionDistanceMeters&quot;:0,&quot;TripSectionTimeSeconds&quot;:0,&quot;MinAltitudeMeters&quot;:0,&quot;MaxAltitudeMeters&quot;:0,&quot;DistanceKm&quot;:10.74,&quot;Duration&quot;:&quot;00:30:25&quot;,&quot;TripSectionDuration&quot;:&quot;00:00:00&quot;}</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<br/>
+
+</p>
+<h2 class="western">5. User Data</h2>
+<p>The application automatically stores the following settings:</p>
+<ul>
+	<li><p>Window position and size</p></li>
+	<li><p>Program status (window mode or minimized)</p></li>
+	<li><p>Last used computer (name and serial number)</p></li>
+	<li><p>List of available bicycles</p></li>
+	<li><p>Assignment <font face="Courier New, monospace">Speedometer
+	(serial number) → bike</font></p></li>
+	<li><p>Language (German/English)*</p></li>
+</ul>
+<p>* <font color="#c9211e"><b>Note:</b></font> BikeDB2026 is
+currently available only in German</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">6. Add bikes and speedometers</h2>
+<p><img src="options_english.png" name="Bild2" align="left" width="312" height="104" border="0">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p><img src="settings_english.png" name="Bild3" align="left" width="418" height="280" border="0">
+  <br clear="left"/>
+</img>
+In
+the form <font face="Courier New, monospace">Options → Settings</font>
+speedometers and bikes can be added. Additionally, the safe file
+folder can be assigned. It is recommended to set it to the folder
+that is used by <b>BikeDB 2026</b>. The BikeDB automatically creates
+a folder “<i>SigmaNotificationApp</i>” which should be assigned
+if both applications are used.</p>
+<p>The speedometers are not actually the speedometers that are
+recognized by their serial numbers, but the ones that are shown in
+the speedometer drop down menus.</p>
+<p>As the application obviously doesn’t know which bikes are used,
+they should be added here as precisely as possible. <b>“Manufacturer
+Model Name Year”</b> is recommended as name.</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">7. Assignment of Speedometer and Bike</h2>
+<p><img src="options_english.png" name="Bild4" align="left" width="312" height="104" border="0">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p><img src="assign_speedometer_english.png" name="Bild5" align="left" width="384" height="295" border="0">
+  <br clear="left"/>
+</img>
+When
+a speedometer is plugged it, it can be assigned to a bike at <font face="Courier New, monospace">Options
+→ Assign speedometer</font> permanently.</p>
+<p>After pressing the speedometer button and waiting for the data to
+be read, the bike that has been created at <b>6.</b> can be assigned.</p>
+<p>Only the serial number counts and it doesn’t matter which model
+name has been chosen. The correct model name is transmitted via USB
+and doesn’t need to be present to assign a speedometer to a bike.</p>
+<h2 class="western"><br/>
+<br/>
+
+</h2>
+<h2 class="western">8. Sources</h2>
+<table width="100%" cellpadding="0" cellspacing="0">
+	<col width="128*"/>
+	<col width="128*"/>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>RUST program
+			by Alfonso Martone</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://gitlab.com/ciofeca/sdsdata">https://gitlab.com/ciofeca/sdsdata</a></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>GitHub link
+			for the Sigma Notification App</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/SigmaNotificationApp">https://github.com/z3dd4-de/SigmaNotificationApp</a></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>Github link
+			BikeDB 2026 (current version: BikeDB 2026)</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/BikeDB2025">https://github.com/z3dd4-de/BikeDB2025</a></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border: none; padding: 0cm"><p>Github link
+			BikeDB Trax 2026</p>
+		</td>
+		<td width="50%" style="border: none; padding: 0cm"><p><a href="https://github.com/z3dd4-de/BikeDB-Trax-2026">https://github.com/z3dd4-de/BikeDB-Trax-2026</a></p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">9. Known Computer IDs</h2>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="128*"/>
+	<col width="128*"/>
+	<tr valign="top">
+		<td width="50%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 12.12</p>
+		</td>
+		<td width="50%" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			0x12</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 16.12</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			0x15</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			BC 16.12 STS</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			0x16</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			tbd</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+<p>When using other speedometers they have to be added to
+<i>SigmaReader.cs</i>:</p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000">
+</font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">enum</font></font></font><font color="#000000">
+</font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BikeComputerModel</font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{</font></font></font></p>
+<p style="margin-left: 2cm; line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Unknown
+= 0,</font></font></font></p>
+<p style="margin-left: 2cm; line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612
+= 0x15,</font></font></font></p>
+<p style="margin-left: 2cm; line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1212
+= 0x12,</font></font></font></p>
+<p style="margin-left: 2cm; line-height: 100%; margin-bottom: 0cm; background: transparent">
+<font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">BC1612_STS
+= 0x16</font></font></font></p>
+<p><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">}</font></font></font></p>
+</body>
+</html>

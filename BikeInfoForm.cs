@@ -259,6 +259,7 @@ namespace SigmaNotificationApp
         private void BikeInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             assignmentDictionary.SaveSettings();
+            DialogResult = DialogResult.OK;
         }
     }
 }

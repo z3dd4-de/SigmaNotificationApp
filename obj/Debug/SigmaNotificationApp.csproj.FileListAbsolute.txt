@@ -1,7 +1,6 @@
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.exe.config
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.exe
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\SigmaNotificationApp.pdb
-C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.ValueTuple.dll
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Text.Encodings.Web.dll
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -9,7 +8,6 @@ C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\Microsoft.Bcl.AsyncIn
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Buffers.dll
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.csproj.AssemblyReference.cache
-C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.csproj.SuggestedBindingRedirects.cache
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.exe.config
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.AboutBox1.resources
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.MainForm.resources
@@ -30,3 +28,15 @@ C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.application
 C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\help_en.html
 C:\Users\fukc-\source\repos\SigmaNotificationApp\obj\Debug\SigmaNotificationApp.BikeInfoForm.resources
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.IO.Pipelines.dll
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Memory.dll
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Text.Json.dll
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Buffers.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.IO.Pipelines.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Memory.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Text.Json.xml
+C:\Users\fukc-\source\repos\SigmaNotificationApp\bin\Debug\System.Threading.Tasks.Extensions.xml
