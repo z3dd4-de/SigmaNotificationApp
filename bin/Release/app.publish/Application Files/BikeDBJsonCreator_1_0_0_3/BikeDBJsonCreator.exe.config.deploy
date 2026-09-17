@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="SigmaNotificationApp.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8.1" />
+    </startup>
+    <userSettings>
+        <SigmaNotificationApp.Properties.Settings>
+            <setting name="WindowSize" serializeAs="String">
+                <value>368, 603</value>
+            </setting>
+            <setting name="WindowLocation" serializeAs="String">
+                <value>50, 50</value>
+            </setting>
+            <setting name="TachoCollection" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="BikeCollection" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="LastTacho" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="LastSerialNumber" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="Language" serializeAs="String">
+                <value>de</value>
+            </setting>
+            <setting name="AppMode" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="SaveFolder" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="AssignmentJson" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="UseLocalization" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="UseWeather" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="ManualCity" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ApiKey" serializeAs="String">
+                <value />
+            </setting>
+        </SigmaNotificationApp.Properties.Settings>
+    </userSettings>
+</configuration>
