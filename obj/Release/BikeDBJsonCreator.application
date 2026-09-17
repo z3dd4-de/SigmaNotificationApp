@@ -7,14 +7,14 @@
     <framework targetVersion="4.8.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="BikeDBJsonCreator.exe.manifest" size="19038">
+    <dependentAssembly dependencyType="install" codebase="BikeDBJsonCreator.exe.manifest" size="19039">
       <assemblyIdentity name="BikeDBJsonCreator.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="de-DE" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>d2GiEC+xxNlbu9VlODep5r1gFHdR59G4kTHPi28oCTs=</dsig:DigestValue>
+        <dsig:DigestValue>TjCaFLxG+8ww8lPTRh5thE71m8R1hdaAJj/R0bJOTJQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

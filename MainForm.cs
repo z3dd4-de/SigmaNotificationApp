@@ -37,6 +37,9 @@ namespace SigmaNotificationApp
         private string weatherDataButtonText = "Wetterdaten abrufen";
         private string enterCityOrEnableLocationText = "Bitte geben Sie eine Stadt ein oder aktivieren Sie die automatische Standortbestimmung.";
         private string errorReadingWeatherText = "Fehler bei der Anfrage:";
+
+        private string unixTime = "";
+
         AssignmentDictionary assignmentDictionary = new AssignmentDictionary();
 
         private enum AppState
@@ -159,7 +162,7 @@ namespace SigmaNotificationApp
 
         public async Task GetWeatherDataAsync(double latitude, double longitude)
         {
-            string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}&dt={unixTime}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -203,7 +206,7 @@ namespace SigmaNotificationApp
                         //Console.WriteLine($"Zustand: {description}");
                         cloudLabel.Text = $"{description}";
 
-                        timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
+                        //timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
 
                         LastWeatherData.Temperature = temp;
                         LastWeatherData.WindSpeed = speed;
@@ -225,7 +228,7 @@ namespace SigmaNotificationApp
 
         public async Task GetWeatherDataAsync(string cityName)
         {
-            string url = $"https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={Properties.Settings.Default.ApiKey}&units=metric&lang={Properties.Settings.Default.Language}&dt={unixTime}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -251,12 +254,12 @@ namespace SigmaNotificationApp
                         double temp = root.GetProperty("main").GetProperty("temp").GetDouble();
                         string description = root.GetProperty("weather")[0].GetProperty("description").GetString();
                         string weatherIcon = root.GetProperty("weather")[0].GetProperty("icon").GetString();
-                        
+
                         weatherPictureBox.ImageLocation = LastWeatherData.GetPngPath(weatherIcon);
                         weatherLogLabel.Text = String.Empty;
 
                         //Console.WriteLine($"Stadt: {cityName}");
-                        locationComboBox.SelectedText = $"{cityName}";
+                        locationComboBox.Text = $"{cityName}";
 
                         //Console.WriteLine($"Temperatur: {temp} °C");
                         tempLabel.Text = $"{temp} °C";
@@ -264,7 +267,7 @@ namespace SigmaNotificationApp
                         //Console.WriteLine($"Zustand: {description}");
                         cloudLabel.Text = $"{description}";
 
-                        timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
+                        //timestampLabel.Text = $"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}";
 
                         LastWeatherData.Temperature = temp;
                         LastWeatherData.WindSpeed = speed;
@@ -376,6 +379,10 @@ namespace SigmaNotificationApp
 
         private async void readTacho()
         {
+            auslesenToolStripMenuItem.Enabled = false;
+            readTachoToolStripButton.Enabled = false;
+            int errorcode = -1;
+
             if (isReading)
             {
                 MessageBox.Show(msgWaitPlease, "Info",
@@ -417,13 +424,15 @@ namespace SigmaNotificationApp
                     // Fahrrad vorauswählen basierend auf Seriennummer
                     //SelectBikeBySerial(info.SerialNumber);
 
-                    MessageBox.Show(msgDataRead, successText,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    /*MessageBox.Show(msgDataRead, successText,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                    errorcode = 0;
                 }
                 else
                 {
-                    MessageBox.Show(errorReadingTachoText,
-                        errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    /*MessageBox.Show(errorReadingTachoText,
+                        errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+                    errorcode = 1;
                 }
             }
             catch (Exception ex)
@@ -436,6 +445,16 @@ namespace SigmaNotificationApp
                 isReading = false;
                 Cursor = Cursors.Default;
             }
+            if (errorcode == 0)
+            {
+                auslesenToolStripMenuItem.Enabled = true;
+                readTachoToolStripButton.Enabled = true;
+            }
+            else if (errorcode == 1)
+            {
+                readTacho();
+            }
+            else return;
         }
 
         private void SelectBikeBySerial(string serialNumber)
@@ -473,8 +492,8 @@ namespace SigmaNotificationApp
         private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            if (settingsForm.ShowDialog(this) == DialogResult.OK) 
-            { 
+            if (settingsForm.ShowDialog(this) == DialogResult.OK)
+            {
                 LoadBikeList();
                 LastWeatherData.RootDir = Properties.Settings.Default.SaveFolder;
                 LastWeatherData.CheckPngDir();
@@ -499,11 +518,31 @@ namespace SigmaNotificationApp
 
         private void hilfeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            showHelp();
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            showHelp();
+        }
+
+        private void showHelp()
+        {
             HelpForm helpForm = new HelpForm();
             helpForm.ShowDialog(this);
         }
 
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            save();
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
+        {
+            save();
+        }
+
+        private void save()
         {
             double distanceMeters_d = double.TryParse(distanceTextBox.Text, out double dist) ? dist : 0;
             uint distanceMeters = (uint)(distanceMeters_d * 1000); // km to m
@@ -549,7 +588,7 @@ namespace SigmaNotificationApp
             else
             {
                 MessageBox.Show(fileSaveErrorText, errorText, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -561,6 +600,18 @@ namespace SigmaNotificationApp
             tsDistanceTextBox.Clear();
             tsTimeTextBox.Clear();
             cadenceTextBox.Clear();
+            minHeightTextBox.Clear();
+            maxHeightTextBox.Clear();
+            avgHeartRateTextBox.Clear();
+            normalizedPowerTextBox.Clear();
+            //weather tab
+            weatherPictureBox.Image = null;
+            cloudLabel.Text = String.Empty;
+            tempLabel.Text = String.Empty;
+            winddirectionLabel.Text = String.Empty;
+            windspeedLabel.Text = String.Empty;
+            timestampLabel.Text = String.Empty;
+            weatherLogLabel.Text = String.Empty;
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -572,7 +623,7 @@ namespace SigmaNotificationApp
             {
                 Properties.Settings.Default.AppMode = (int)AppState.NotifyIcon;
                 dsNotifyIcon.Visible = true;
-                Hide(); 
+                Hide();
             }
             else
             {
@@ -636,6 +687,7 @@ namespace SigmaNotificationApp
             {
                 weatherToolStripButton.Enabled = false;
             }
+            getTimeStamp(dateTimePicker.Value);
         }
 
         private void deutschToolStripMenuItem_Click(object sender, EventArgs e)
@@ -682,6 +734,7 @@ namespace SigmaNotificationApp
                 hilfeToolStripMenuItem.Text = "&Hilfe";
                 infoToolStripMenuItem.Text = "&Info";
                 hilfeToolStripMenuItem1.Text = "&Hilfe";
+                helpToolStripButton.Text = "Hilfe";
                 spracheToolStripMenuItem.Text = "&Sprache";
                 optionenToolStripMenuItem.Text = "&Optionen";
                 deutschToolStripMenuItem.Text = "&Deutsch";
@@ -701,6 +754,7 @@ namespace SigmaNotificationApp
                 tachoText = "Tacho";
                 unknownText = "Unbekannt";
                 saveButton.Text = "Speichern";
+                saveToolStripButton.Text = "Speichern";
                 clearButton.Text = "Löschen";
                 readTachoToolStripButton.Text = "Auslesen";
                 exitToolStripButton.Text = "Beenden";
@@ -709,7 +763,7 @@ namespace SigmaNotificationApp
                 tachoMitRadVerknüpfenToolStripMenuItem.Text = "Tacho mit Rad verknüpfen";
                 if (Properties.Settings.Default.UseWeather)
                     weatherLogLabel.Text = "Bitte erst Wetterdaten abrufen...";
-                else 
+                else
                     weatherLogLabel.Text = "Wetterdaten deaktiviert";
                 weatherToolStripButton.Text = "Wetterdaten abrufen";
 
@@ -758,6 +812,7 @@ namespace SigmaNotificationApp
                 hilfeToolStripMenuItem.Text = "&Help";
                 infoToolStripMenuItem.Text = "&Info";
                 hilfeToolStripMenuItem1.Text = "&Help";
+                helpToolStripButton.Text = "Help";
                 spracheToolStripMenuItem.Text = "&Language";
                 optionenToolStripMenuItem.Text = "&Options";
                 deutschToolStripMenuItem.Text = "&Deutsch";
@@ -777,6 +832,7 @@ namespace SigmaNotificationApp
                 tachoText = "Speedometer";
                 unknownText = "Unknown";
                 saveButton.Text = "Save";
+                saveToolStripButton.Text = "Save";
                 clearButton.Text = "Delete";
                 readTachoToolStripButton.Text = "Read";
                 exitToolStripButton.Text = "Exit";
@@ -874,6 +930,20 @@ namespace SigmaNotificationApp
                     Properties.Settings.Default.Save();
                 }
             }
+        }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            getTimeStamp(dateTimePicker.Value);
+        }
+
+        private void getTimeStamp(DateTime dateTime)
+        {
+            timestampLabel.Text = dateTime.ToString("dd.MM.yyyy HH:mm");
+            // Get the offset from current time in UTC time
+            DateTimeOffset dto = new DateTimeOffset(dateTime);
+            long unixTimeStamp = dto.ToUnixTimeSeconds();
+            unixTime = unixTimeStamp.ToString();
         }
     }
 }

@@ -60,6 +60,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.normalizedPowerTextBox = new System.Windows.Forms.TextBox();
+            this.avgHeartRateTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,10 +85,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -107,10 +111,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.timestampLabel = new System.Windows.Forms.Label();
             this.weatherLogLabel = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.avgHeartRateTextBox = new System.Windows.Forms.TextBox();
-            this.normalizedPowerTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.notificationContextMenuStrip.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -193,8 +196,11 @@
             this.exitToolStripButton,
             this.readTachoToolStripButton,
             this.weatherToolStripButton,
+            this.toolStripSeparator2,
+            this.saveToolStripButton,
             this.toolStripSeparator1,
-            this.infoToolStripButton});
+            this.infoToolStripButton,
+            this.helpToolStripButton});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 24);
             this.mainToolStrip.Name = "mainToolStrip";
             this.mainToolStrip.Size = new System.Drawing.Size(352, 25);
@@ -356,20 +362,20 @@
             // 
             this.infoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("infoToolStripMenuItem.Image")));
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.infoToolStripMenuItem.Text = "&Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(96, 6);
             // 
             // hilfeToolStripMenuItem1
             // 
             this.hilfeToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("hilfeToolStripMenuItem1.Image")));
             this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
-            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.hilfeToolStripMenuItem1.Text = "&Hilfe";
             this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
             // 
@@ -430,6 +436,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 461);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // normalizedPowerTextBox
+            // 
+            this.normalizedPowerTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.normalizedPowerTextBox.Location = new System.Drawing.Point(158, 395);
+            this.normalizedPowerTextBox.Name = "normalizedPowerTextBox";
+            this.normalizedPowerTextBox.Size = new System.Drawing.Size(177, 20);
+            this.normalizedPowerTextBox.TabIndex = 30;
+            // 
+            // avgHeartRateTextBox
+            // 
+            this.avgHeartRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.avgHeartRateTextBox.Location = new System.Drawing.Point(158, 365);
+            this.avgHeartRateTextBox.Name = "avgHeartRateTextBox";
+            this.avgHeartRateTextBox.Size = new System.Drawing.Size(177, 20);
+            this.avgHeartRateTextBox.TabIndex = 29;
+            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -449,6 +471,7 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(177, 20);
             this.dateTimePicker.TabIndex = 0;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // label1
             // 
@@ -643,6 +666,14 @@
             this.label13.TabIndex = 23;
             this.label13.Text = "Max Höhenmeter [m ü.NN]";
             // 
+            // maxHeightTextBox
+            // 
+            this.maxHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.maxHeightTextBox.Location = new System.Drawing.Point(158, 335);
+            this.maxHeightTextBox.Name = "maxHeightTextBox";
+            this.maxHeightTextBox.Size = new System.Drawing.Size(177, 20);
+            this.maxHeightTextBox.TabIndex = 26;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.saveButton);
@@ -674,13 +705,25 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
-            // maxHeightTextBox
+            // label16
             // 
-            this.maxHeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maxHeightTextBox.Location = new System.Drawing.Point(158, 335);
-            this.maxHeightTextBox.Name = "maxHeightTextBox";
-            this.maxHeightTextBox.Size = new System.Drawing.Size(177, 20);
-            this.maxHeightTextBox.TabIndex = 26;
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 368);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 13);
+            this.label16.TabIndex = 27;
+            this.label16.Text = "Ø Herzfrequenz [min⁻¹]";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 398);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(130, 13);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Normalisierte Leistung [W]";
             // 
             // tabControl1
             // 
@@ -910,41 +953,30 @@
             this.weatherLogLabel.TabIndex = 14;
             this.weatherLogLabel.Text = "weatherLogLabel";
             // 
-            // label16
+            // toolStripSeparator2
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 368);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 13);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Ø Herzfrequenz [min⁻¹]";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // label20
+            // saveToolStripButton
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 398);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(130, 13);
-            this.label20.TabIndex = 28;
-            this.label20.Text = "Normalisierte Leistung [W]";
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "Speichern";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
-            // avgHeartRateTextBox
+            // helpToolStripButton
             // 
-            this.avgHeartRateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.avgHeartRateTextBox.Location = new System.Drawing.Point(158, 365);
-            this.avgHeartRateTextBox.Name = "avgHeartRateTextBox";
-            this.avgHeartRateTextBox.Size = new System.Drawing.Size(177, 20);
-            this.avgHeartRateTextBox.TabIndex = 29;
-            // 
-            // normalizedPowerTextBox
-            // 
-            this.normalizedPowerTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.normalizedPowerTextBox.Location = new System.Drawing.Point(158, 395);
-            this.normalizedPowerTextBox.Name = "normalizedPowerTextBox";
-            this.normalizedPowerTextBox.Size = new System.Drawing.Size(177, 20);
-            this.normalizedPowerTextBox.TabIndex = 30;
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.helpToolStripButton.Text = "Hilfe";
+            this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
             // 
             // MainForm
             // 
@@ -1068,6 +1100,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox normalizedPowerTextBox;
         private System.Windows.Forms.TextBox avgHeartRateTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton;
     }
 }
 

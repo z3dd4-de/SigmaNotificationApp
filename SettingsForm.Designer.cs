@@ -47,8 +47,6 @@
             this.addBikeTextBox = new System.Windows.Forms.TextBox();
             this.clearBikeBbutton = new System.Windows.Forms.Button();
             this.addBikeButton = new System.Windows.Forms.Button();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.saveLocationToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.locationCheckBox = new System.Windows.Forms.CheckBox();
@@ -57,8 +55,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.weatherCheckBox = new System.Windows.Forms.CheckBox();
-            this.apiTextBox = new System.Windows.Forms.TextBox();
             this.apiLabel = new System.Windows.Forms.Label();
+            this.apiTextBox = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.saveLocationToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -371,15 +371,6 @@
             this.weatherCheckBox.UseVisualStyleBackColor = true;
             this.weatherCheckBox.CheckedChanged += new System.EventHandler(this.weatherCheckBox_CheckedChanged);
             // 
-            // apiTextBox
-            // 
-            this.apiTextBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.apiTextBox.Location = new System.Drawing.Point(167, 3);
-            this.apiTextBox.Name = "apiTextBox";
-            this.apiTextBox.Size = new System.Drawing.Size(235, 20);
-            this.apiTextBox.TabIndex = 1;
-            this.apiTextBox.TextChanged += new System.EventHandler(this.apiTextBox_TextChanged);
-            // 
             // apiLabel
             // 
             this.apiLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -389,6 +380,15 @@
             this.apiLabel.Size = new System.Drawing.Size(72, 13);
             this.apiLabel.TabIndex = 2;
             this.apiLabel.Text = "API-Schlüssel";
+            // 
+            // apiTextBox
+            // 
+            this.apiTextBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.apiTextBox.Location = new System.Drawing.Point(167, 3);
+            this.apiTextBox.Name = "apiTextBox";
+            this.apiTextBox.Size = new System.Drawing.Size(235, 20);
+            this.apiTextBox.TabIndex = 1;
+            this.apiTextBox.TextChanged += new System.EventHandler(this.apiTextBox_TextChanged);
             // 
             // SettingsForm
             // 

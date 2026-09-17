@@ -5,7 +5,8 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 25.8.5.2 (Windows)"/>
 	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="2026-06-20T05:17:06.159460200"/>
+	<meta name="changed" content="2026-08-22T19:34:50.701571200"/>
+	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
 	<meta name="created" content="00:00:00">
@@ -41,8 +42,48 @@ damit ich ihn allgemein verfügbar machen kann (siehe bekannte
 Tacho-IDs).</p>
 <p><img src="app_german.png" name="Bild2" align="left" width="367" height="515" border="0"/>
 <br clear="left"/>
-Leere
-Zeilen werden als „0“ gespeichert.</p>
+</p>
+<p style="page-break-before: always"><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p>Leere Zeilen werden als „0“ gespeichert.</p>
 <p><br/>
 <br/>
 
@@ -50,8 +91,8 @@ Zeilen werden als „0“ gespeichert.</p>
 <h2 class="western">2. Installation</h2>
 <p>ZIP-Installationspaket von Github herunterladen, an beliebigen Ort
 entpacken.</p>
-<p>„SigmaNotificationApp.exe“ starten, nach Bedarf Link z.B. auf
-dem Desktop anlegen.</p>
+<p>„BikeDBJsonCreator.exe“ starten, nach Bedarf Link z.B. auf dem
+Desktop anlegen.</p>
 <p>Die installierte Version kann in <b>BikeDB 2026</b> verknüpft
 werden und dort aus dem Menü heraus gestartet werden.</p>
 <p><br/>
@@ -93,14 +134,40 @@ Strecken, Fahrten, etc.</p>
 <br/>
 
 </p>
-<p>Es können ohne einen angeschlossenen Tacho auch manuelle Dateien
-erstellt werden: einfach alle Daten eintragen und die Datei
-speichern.</p>
+<p>Es können ohne einen angeschlossenen Tacho auch <i>manuelle
+Dateien </i>erstellt werden: einfach alle Daten eintragen und die
+Datei speichern.</p>
 <p><br/>
 <br/>
 
 </p>
-<h2 class="western">4. Speicher-Format</h2>
+<h2 class="western" style="page-break-after: avoid">4. Wetterdaten</h2>
+<p>Nachdem man die Tachodaten eingelesen oder eingegeben hat, kann
+man noch das aktuelle Wetter von <a href="https://openweathermap.org/">https://openweathermap.org/</a>
+auslesen.</p>
+<p>D<img src="read_weather_german.png" name="Bild7" align="left" width="107" height="51" border="0">
+  <br clear="left"/>
+</img>
+ie
+Wetterdaten können dann zusammen mit den Tachodaten in einer Datei
+gespeichert werden.</p>
+<p>Hierfür benötigt man allerdings einen API-Key, den man kostenlos
+durch Anlegen eines Accounts auf der Webseite erhalten kann. Solange
+man unter 1000 API-Abfragen pro Tag bleibt, kann man den Account
+kostenlos nutzen. Dies sollte im Rahmen dieser Anwendung aber kein
+Problem sein.</p>
+<p><img src="weather_german.png" name="Bild8" align="left" width="351" height="585" border="0">
+  <br clear="left"/>
+</img>
+<br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<h2 class="western">5. Speicher-Format</h2>
 <p>Die Anwendung erzeugt eine JSON-Datei
 „<i>bikedata_JJJJMMTT-HHmm.json</i>“. Der Zeitstempel ist die
 Uhrzeit, die im Datum mit Uhrzeit der Anwendung ausgewählt wurde.
@@ -210,6 +277,98 @@ C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
 </font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 </font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
 } = 0;</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">HeartRate</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">NormalizedPower</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Profile</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Weather</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WeatherId</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font>
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WeatherIcon</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font>
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">uint</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Feeling</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WindSpeed</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WindDirection</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font>
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">string</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WindCompass</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">double</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">Temperature</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font>
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">public</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#2b91af"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">DateTime</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">WeatherTimestamp</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">
+</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">get</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+</font></font></font><font color="#0000ff"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">set</font></font></font><font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">;
+}</font></font></font></p>
 <p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm; background: transparent">
 <br/>
 
@@ -239,7 +398,7 @@ C#-Klasse, die zum Serialisieren der JSON-Datei verwendet wird:</p>
 <p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <font color="#000000"><font face="Cascadia Mono, serif"><font size="2" style="font-size: 9pt">{&quot;TachoName&quot;:&quot;BC
 12.12&quot;,&quot;BikeName&quot;:&quot;Carver
-X0-3&quot;,&quot;Timestamp&quot;:&quot;2026-05-15T12:00:30&quot;,&quot;DistanceMeters&quot;:10740,&quot;TimeSeconds&quot;:1825,&quot;MeanSpeedKmh&quot;:21.18,&quot;MaxSpeedKmh&quot;:40.25,&quot;Cadence&quot;:0,&quot;TripSectionDistanceMeters&quot;:0,&quot;TripSectionTimeSeconds&quot;:0,&quot;MinAltitudeMeters&quot;:0,&quot;MaxAltitudeMeters&quot;:0,&quot;DistanceKm&quot;:10.74,&quot;Duration&quot;:&quot;00:30:25&quot;,&quot;TripSectionDuration&quot;:&quot;00:00:00&quot;}</font></font></font></p>
+X0-3&quot;,&quot;Timestamp&quot;:&quot;2026-08-19T14:20:44&quot;,&quot;DistanceMeters&quot;:16180,&quot;TimeSeconds&quot;:3048,&quot;MeanSpeedKmh&quot;:19.109999999999999,&quot;MaxSpeedKmh&quot;:44.789999999999999,&quot;Cadence&quot;:0,&quot;TripSectionDistanceMeters&quot;:0,&quot;TripSectionTimeSeconds&quot;:0,&quot;MinAltitudeMeters&quot;:0,&quot;MaxAltitudeMeters&quot;:0,&quot;HeartRate&quot;:0,&quot;NormalizedPower&quot;:0,&quot;Profile&quot;:0,&quot;Weather&quot;:&quot;Bedeckt&quot;,&quot;WeatherId&quot;:&quot;04d&quot;,&quot;WeatherIcon&quot;:&quot;C:\\Users\\&lt;username&gt;\\Documents\\BikeDB\\SigmaNotificationApp\\WeatherPNGs\\04d@2x.png&quot;,&quot;Feeling&quot;:0,&quot;WindSpeed&quot;:3.6000000000000001,&quot;WindDirection&quot;:270,&quot;WindCompass&quot;:&quot;W&quot;,&quot;Temperature&quot;:22.010000000000002,&quot;WeatherTimestamp&quot;:&quot;2026-08-19T15:19:22.5507766+02:00&quot;,&quot;DistanceKm&quot;:16.18,&quot;Duration&quot;:&quot;00:50:48&quot;,&quot;TripSectionDuration&quot;:&quot;00:00:00&quot;}</font></font></font></p>
 <p style="line-height: 100%; margin-bottom: 0cm; background: transparent">
 <br/>
 

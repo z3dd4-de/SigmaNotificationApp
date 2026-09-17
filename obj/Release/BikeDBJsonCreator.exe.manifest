@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BikeDBJsonCreator.exe" size="999888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BikeDBJsonCreator.exe" size="1002448">
       <assemblyIdentity name="BikeDBJsonCreator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kKCZhBckhoaLgzS1jgOG4FAivoI/RrN/A+5Eiy8VW6U=</dsig:DigestValue>
+        <dsig:DigestValue>p5NDrZo6448CVJ6hPJlxBBLzHbDlX/bnDiZqc8Ugo0s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -228,13 +228,13 @@
       <dsig:DigestValue>q/9+N5AoS4U4iqXTRRXY5UFLxKCt9Dv8eZBEYQSXD0Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="help.html" size="29839">
+  <file name="help.html" size="48728">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OD0gSDzXreaSOZVDb90gZnXeUG3RqNZxMxnumd62gwQ=</dsig:DigestValue>
+      <dsig:DigestValue>Kg0MnV4cQ5Zb6wjDQwzbFhw0mheq0DyArK5qV3+tt6A=</dsig:DigestValue>
     </hash>
   </file>
   <file name="help_en.html" size="29386">
