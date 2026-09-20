@@ -20,7 +20,7 @@ Directory \publish\setup.exe -> install the latest version
 - Languages: German and English
 - Help.html which can be browsed via the help menu. Available only in German, but with much more information about the features.
 - Stores data in a JSON file, optimized to be imported into BikeDB2026, but could also be used for other applications.
-- Weather data from OpenWeatherMap.org can be stored in the JSON file if an API key is available. Free to use with <= 1000 API requests per day.
+- Weather data from https://OpenWeatherMap.org can be stored in the JSON file if an API key is available. Free to use with <= 1000 API requests per day.
 
 ## Screenshots
 ![German main window of the application](app_german.png)
