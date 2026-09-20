@@ -18,7 +18,7 @@ Directory \publish\setup.exe -> install the latest version
 ## Features
 - Can be minimized and waits idle beneath the clock on a Windows system.
 - Languages: German and English
-- Help.html which can be browsed via the help menu. Available only in German, but with much more information about the features.
+- Help(_en).html which can be browsed via the help menu. Contains more information available in German and English.
 - Stores data in a JSON file, optimized to be imported into BikeDB2026, but could also be used for other applications.
 - Weather data from https://OpenWeatherMap.org can be stored in the JSON file if an API key is available. Free to use with <= 1000 API requests per day.
 
@@ -35,14 +35,14 @@ It might be useful for anyone trying to program their own application.
 
 ## Compatibility
 In 2026 BikeDB Trax was introduced. This is primarily a GPS-tracker to record routes. But it can also be used as a speedometer on an Android smartphone. 
-BikeDB Trax uses the same JSON file format as the BikeDBJsonCreator. 
+BikeDB Trax uses the same JSON file format as BikeDBJsonCreator. 
 Thus, if you don't have a Sigma speedometer, you can use BikeDB Trax instead and still get ride data that can be imported into BikeDB 2026.
 In this case you wouldn't need the BikeDBJsonCreator, although results might not be as consistent and reliable as with using a bike computer.
 
 ## TODO
 The final version will include the possibility to load existing JSON files for editing. 
 Those JSON files are backward compatible. E.g. in BikeDB Trax weather data is not (yet) recorded. 
-Thus, BikeDBJsonCreator can import older file version and add the latest fields. Weather data can be fetched for dates in the past.
+Thus, BikeDBJsonCreator can import older file versions and add the latest fields. Weather data can be fetched for dates in the past.
 
 ## Credits
 The original work was done by Alfonso Martone. Check out his original work at:
